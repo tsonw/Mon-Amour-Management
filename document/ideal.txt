@@ -1,0 +1,37 @@
+Ideal về web quản lý cửa hàng Mon Amour:
+
+Navigation :
+- Home (Icon) 
+- Doanh thu 
+- Kho
+- Nhân viên
+- Logout
+
+I. Page Home : 
+    1. Hình ảnh quán
+    2. Biểu đồ : 
+    - Doanh thu trong tuần
+    - Doanh thu trong tháng
+    - Danh sách các món thường xuyên được gọi trong tháng
+
+II. Page Function :
+1. Quản lý sản phẩm: Cho phép thêm, sửa, xóa, tìm kiếm và phân loại sản phẩm dễ dàng.
+    a. Danh sách các món đang đưa vào hoạt động :
+    - Công thức
+    - Giá bán
+    - Phân loại
+2. Quản lý kho: Theo dõi số lượng tồn kho, nhập xuất hàng hóa, cảnh báo khi sắp hết hàng.
+    a. Danh sách nguyên liệu trong kho :
+    - Mã sản phẩm
+    - Tên sản phẩm
+    - Hình ảnh sản phẩm
+    - Số lượng còn lại
+    - Phân loại
+    b. Quản lý danh sách nhập hàng : 
+    - Lựa chọn số lượng trên danh sách rồi thêm vào phần hàng tồn kho tự cập nhật số lượng
+3. Quản lý bán hàng : 
+    a. Quản lý số lượng oder trong từng món đưa ra phân tích dựa trên biểu đồ
+4. Quản lý nhân viên: Phân quyền, theo dõi hiệu suất làm việc, chấm công.
+    a. Quản lý giờ làm
+5. Quản lý nhân viên cập nhập số liệu trên web.
+    a. Mọi hoạt động của nhân viên sẽ được lưu lại theo từng hoạt động như thêm, xoá, cập nhật.
