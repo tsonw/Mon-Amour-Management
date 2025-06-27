@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/request-create-acc.css">
+        <link rel="icon" href="../assets/iconMA.png" type="image/png">
+        <title>Request | Mon Amour</title>
+    </head>
+    <body>
+        <div class="request">
+            <form id="contact-form" action="/login" method="post">
+                <img src="../assets/logoMonAmour.png" alt="logoMonAmour">
+                <div class="login-box">
+                    <h1>Registration Form</h1>
+                    <div class="input-box">
+                        <input type="text" class="input-feild" id="username" name="username" placeholder="" required>
+                        <label class="label" for="username">Username</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-feild" id="password" name="password" placeholder="" required>    
+                        <label class="label" for="password">Password</label>
+                    </div>
+                    <p>Your password needs 8+ characters and at least 1 number</p>
+                    <button type="submit" id="send-button">Send</button>
+                </div>
+                <p>Already have an account ?</p><br>
+                <a href="/index.html">Login here</a>
+            </form>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        // Khởi tạo EmailJS với user ID
+        (function () {
+            emailjs.init("PB_cWyXI-ueycJGVU"); // lấy từ EmailJS dashboard
+        })();
+        
+        // Kiểm tra mật khẩu đã đủ điểu kiện
+        const passwordInputCheck = false;
+        
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Kiểm tra mật khẩu đã đủ điểu kiện
+            const passwordInput = document.getElementById("password").value;
+            console.log(passwordInput);
+            if (passwordInput.length < 8 || !/\d/.test(passwordInput)) {
+                alert("Mật khẩu cần ít nhất 8 ký tự và chứa ít nhất 1 số.");
+            } else {
+                emailjs
+                .sendForm("service_t2vdo2e", "template_ki09zag", this)
+                .then(
+                    function () {
+                        alert("Gửi thành công rùi nhaaa 🎉, đợi một chút rùi tony sẽ thêm zô !!!");
+                        
+                        // Reset form after successful submission
+                        document.getElementById("contact-form").reset();
+                    },
+                    function (error) {
+                        alert("Ơ chết rồi 😵‍💫 Có lỗi nè: " + JSON.stringify(error));
+                    }
+                );
+            }
+        });
+        
+        /*
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            emailjs
+            .sendForm("service_t2vdo2e", "template_ki09zag", this)
+            .then(
+                function () {
+                    alert("Gửi thành công rùi nhaaa 🎉, đợi một chút rùi tony sẽ thêm zô !!!");
+                    
+                    // Reset form after successful submission
+                    document.getElementById("contact-form").reset();
+                },
+                function (error) {
+                    alert("Ơ chết rồi 😵‍💫 Có lỗi nè: " + JSON.stringify(error));
+                }
+            );
+        });
+        */
+    </script>
+</html>

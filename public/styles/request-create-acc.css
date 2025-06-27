@@ -1,9 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.login {
+.request {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +19,7 @@
     width: 100%;
 }
 
-.login > form {
+.request > form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,18 +29,17 @@
     border-radius: 25px;
     background-color: #ffffffae;
     border: #ffffff 3px solid;
-    padding: 10px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.8);
 }
 
-.login > form > img {
+.request > form > img {
     width: 50%;
     height: auto;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.login > form > .login-box {
+.request > form > .login-box {
     background-color: rgba(255, 255, 255);
     padding: 20px;
     border-radius: 25px;
@@ -48,7 +49,15 @@
     position: relative;
 }
 
-.login > form > .login-box > .input-box {
+.request > form > .login-box > h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #EC1C24;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.request > form > .login-box > .input-box {
     position: relative;
     width: 100%;
 }
@@ -66,7 +75,7 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: calc(100% - 20px);
+    width: calc(100%);
 }
 
 .input-feild:focus {
@@ -88,7 +97,7 @@
     transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.login > form > .login-box > button {
+.request > form > .login-box > button {
     background-color: #EC1C24;
     width: 100%;
     height: 30px;
@@ -100,22 +109,22 @@
     font-weight: bold;
 }
 
-.login > form > .login-box > button:hover {
+.request > form > .login-box > button:hover {
     background-color: #ea4e53;
 }
 
-.login > form > .login-box > button:active {
+.request > form > .login-box > button:active {
     background-color: #ffffff;
 }
 
-.login > form > p {
+.request > form > p {
     margin-top: 20px;
     font-size: 16px;
     font-weight: bold;
     color: #000000;
 }
 
-.login > form > a {
+.request > form > a {
     color: #EC1C24;
     font-weight: bold;
     font-size: 16px;
@@ -123,6 +132,14 @@
     margin-bottom: 30px;
 }
 
-.login > form > a:hover {
+.request > form > a:hover {
     text-decoration: underline;
+}
+
+.request > form > .login-box > p {
+    color: #EC1C24;
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-align: center;
 }

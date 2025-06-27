@@ -7,7 +7,8 @@ import { app } from "/scripts/firebase-config.js";
 import { auth } from "./auth-signin.js";
 
 const db = getFirestore(app);
-//const docRef = doc(db, "produit", "siro")
+const docRef = doc(db, "produit", "siro")
+
 // Form mẫu trích xuất dữ liệu từ Firestore
 /*
     const docRef = doc(db, "produit", "siro");
@@ -25,16 +26,16 @@ const db = getFirestore(app);
 
 // Trích xuất toàn bộ dữ liệu từ collection
 /*
-const querySnapshot = await getDocs(collection(db, "produit"));
-querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} =>`, doc.data());
+    const querySnapshot = await getDocs(collection(db, "produit"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} =>`, doc.data());
 
-    // Ví dụ: hiển thị tên từng sản phẩm lên HTML
-    const name = doc.data().name;
-    const h1 = document.createElement("h1");    // Tạo một phần tử h1 mới
-    h1.innerText = name;                        // Gán tên sản phẩm vào phần tử h1
-    document.body.appendChild(h1);              // Thêm phần tử h1 vào body của trang HTML
-});
+        // Ví dụ: hiển thị tên từng sản phẩm lên HTML
+        const name = doc.data().name;
+        const h1 = document.createElement("h1");    // Tạo một phần tử h1 mới
+        h1.innerText = name;                        // Gán tên sản phẩm vào phần tử h1
+        document.body.appendChild(h1);              // Thêm phần tử h1 vào body của trang HTML
+    });
 */
 
 // setDoc để thêm hoặc cập nhật tài liệu
