@@ -3,7 +3,7 @@ import { doc, getDocs, onSnapshot } from "firebase/firestore";
 import { collection, setDoc } from "firebase/firestore"; 
 import { onAuthStateChanged } from "firebase/auth";
 import { getDoc, addDoc, updateDoc } from "firebase/firestore";
-import { app } from "/scripts/firebase-config.js";
+import { app } from "../config/firebase-config.js";
 import { auth } from "./auth-signin.js";
 
 const db = getFirestore(app);
