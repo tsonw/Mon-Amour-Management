@@ -8,34 +8,7 @@
         <title>Authentication | Mon Amour</title>
     </head>
     <body>
-        <div class="login">
-            <form action="/login" method="post">
-                <img src="./assets/logoMonAmour.png" alt="logoMonAmour">
-                <div class="login-box">
-                    <div class="input-box">
-                        <input type="text" class="input-feild" id="username" name="username" placeholder="" required>
-                        <label class="label" for="username">Username</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" class="input-feild" id="password" name="password" placeholder="" required>    
-                        <label class="label" for="password">Password</label>
-                    </div>
-                    <button id="login-button">Login</button>
-                </div>
-                <p>Don't have an account ?</p><br>
-                <a href="./pages/request-create-acc.html">Request to create account here</a>
-            </form>
-        </div>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
     </body>
-    <script type="module">
-        import { mySignInWithEmailAndPassword } from './scripts/auth-signin.js';
-
-        document.getElementById('login-button').addEventListener('click', (event) => {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            console.log(username, password);
-            mySignInWithEmailAndPassword(username, password);
-        });
-    </script>
 </html>

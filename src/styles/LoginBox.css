@@ -85,7 +85,7 @@
     font-weight: bold;
     background-color: white;
     padding: 0 5px;
-    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .login > form > .login-box > button {
@@ -105,7 +105,9 @@
 }
 
 .login > form > .login-box > button:active {
-    background-color: #ffffff;
+    background-color: #ec1c23c6;
+    border: 1px solid #ff0008;
+    scale: 0.98;
 }
 
 .login > form > p {
