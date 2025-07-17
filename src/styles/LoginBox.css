@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/background_Login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh;
+    width: 100%;
+}
+
+.login > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: fit-content;
+    border-radius: 25px;
+    background-color: #ffffffae;
+    border: #ffffff 3px solid;
+    padding: 10px;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.8);
+}
+
+.login > form > img {
+    width: 50%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.login > form > .login-box {
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 25vw;
+    height: fit-content;
+    position: relative;
+}
+
+.login > form > .login-box > .input-box {
+    position: relative;
+    width: 100%;
+}
+
+.label {
+    position: absolute;
+    font-size: 14px;
+    color: #b6b6b6;
+    left: 10px;
+    top: 10px;
+}
+
+.input-feild {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+}
+
+.input-feild:focus {
+    border: #EC1C24 1px solid;
+    outline: none;
+}
+
+
+.input-feild:focus ~ .label,
+.input-feild:valid ~ .label {
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    font-size: 14px;
+    color: #EC1C24;
+    font-weight: bold;
+    background-color: white;
+    padding: 0 5px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.login > form > .login-box > button {
+    background-color: #EC1C24;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login > form > .login-box > button:hover {
+    background-color: #ea4e53;
+}
+
+.login > form > .login-box > button:active {
+    background-color: #ec1c23c6;
+    border: 1px solid #ff0008;
+    scale: 0.98;
+}
+
+.login > form > p {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.login > form > a {
+    color: #EC1C24;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.login > form > a:hover {
+    text-decoration: underline;
+}
