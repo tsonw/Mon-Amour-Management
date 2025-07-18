@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+@keyframes navi-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    animation: navi-animation 0.3s forwards ease-out;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    border: #ffffff solid 2px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav_Logo_link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_Logo {
+    width: 50%;
+}
+
+.function_selector {
+    justify-self: end;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.main_function {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.function_selection {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 200;
+    margin-right: 5%;
+    padding: 5px 0;
+    color: #263767;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+}
+
+.function_selection::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scale: 0;
+    border-bottom: #0b256c solid 2px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.function_selection:hover::after {
+    scale: 1;
+}
+
+.function_selection:hover {
+    color: #0b256c;
+    font-weight: 500;
+}
+
+.btn_logout {
+    color: #ffffff;
+    background-color: #263767;
+    padding: 10px 30px;
+    border-radius: 100px;
+    border: #ffffff solid 1px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn_logout:hover {
+    background-color: #0b256c;
+    box-shadow: 0px 4px 0px #0b256c;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn_logout:active {
+    background-color: #52596a;
+    position: relative;
+    top: 4px;
+    box-shadow: 0px 0px 0px #0b256c;
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}

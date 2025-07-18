@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import emailjs from 'emailjs-com';
-import "../styles/Request.css";
+import "../styles/components-styles/Request.css";
 
 export default function Request() {
 

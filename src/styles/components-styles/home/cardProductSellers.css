@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+@keyframes card-product-animation {
+    0% {
+        opacity: 0;
+        transform: translate(-1000px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.main-card-product-sellers {
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+}
+
+.card-product-sellers {
+    height: 70vh;
+    width: 30%;
+    padding: 10px;
+    border: #ffffff solid 2px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    animation: card-product-animation 1s forwards;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.img-product-sellers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 0%);
+    height: 100%;
+}
+
+.descript-card-product-sellers {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 20px;
+    width: calc(100% - 20px);
+    padding: 20px;
+    background-color: #ffffff;
+    color: #263767;
+    
+}
+
+.name-product-sellers {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price-product-sellers {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.quantite-product-sellers {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 300;
+}

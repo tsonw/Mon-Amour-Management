@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-topSellers-Panel {
+    margin: 100px 30px 30px 30px;
+    width: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-topSellers-Panel {
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.card-product-panel {
+    width: 100%;
+}

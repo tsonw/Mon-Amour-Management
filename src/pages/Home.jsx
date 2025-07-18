@@ -2,29 +2,26 @@ import React from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../scripts/auth-signin';
 import { Link } from 'react-router-dom';
+import Navigation from '../components/navigation';
+import HelloPanel from '../components/home-components/helloPanel';
+
+import "../styles/pages-styles/Home.css";
+import TopSellersPanel from '../components/home-components/topSellersPanel';
+import SaleRevenue from '../components/home-components/saleRevenue';
+import Footer from '../components/footer';
 
 export default function Home() {
-    function handleClick() {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            alert("Logged out successfully");
-            window.location.href = '/';
-        }).catch((error) => {
-            // An error happened.
-            console.error("Error:", error);
-        });
-    }
     
+    // Thay đổi tiêu đề của trang hiện tại
+    document.title = "Home | Mon Amour"
+
     return (
-        <div>
-            <br />
-            <h1>Trang chủ nèee 🏠</h1>
-            <p>Chào mừng bạn đến với Mon Amour 💖</p>
-            <p>Hãy cùng khám phá những điều thú vị nhé!</p>
-            <p>Chúc bạn có một ngày tuyệt vời!</p>
-            <Link to="/about"> About</Link>
-            <br />
-            <button onClick={handleClick}>Logout</button>
+        <div id='Home'>
+            <Navigation />
+            <HelloPanel />
+            <TopSellersPanel />
+            <SaleRevenue />
+            <Footer />
         </div>
     );
 }

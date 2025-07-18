@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-hello-panel {
+    margin: 30px;
+    background-image: url('../../../assets/background_Home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 80vh;
+    position: relative;
+    z-index: 0;
+}
+
+.main-hello-panel::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    height: 70vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.text-hello-panel {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.title-hello-panel {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-shadow: 0px 5px 20px #000000;
+    position: relative;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.content-hello-panel {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 20px;
+    text-shadow: 0px 5px 20px #000000;
+    position: relative;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.shortcut-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    height: 10vh;
+    width: 60%;
+    border-radius: 100px;
+    border: #ffffff solid 2px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.item-shortcut-btn {
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 20px;
+    font-weight: 250;
+    color: #263767;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.item-shortcut-btn:hover {
+    color: #0b256c;
+    font-weight: 500;
+    scale: 1.01;
+}
+
+.item-shortcut-btn:active {
+    color: #52596a;
+    font-weight: 500;
+    scale: 1.01;
+}
+
+.item-shortcut-btn:nth-child(1) {
+    padding-right: 10%;
+    margin-right: 10%;
+    border-right: #263767 solid 1px;
+}
+
+.item-shortcut-btn:nth-child(2) {
+    padding-right: 10%;
+    margin-right: 10%;
+    border-right: #263767 solid 1px;
+}

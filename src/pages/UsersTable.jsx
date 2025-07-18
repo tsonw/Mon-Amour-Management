@@ -8,6 +8,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../scripts/get-document.js'; 
 
 function UsersTable() {
+
     const [data, setData] = useState([]);
     
     // Lấy dữ liệu từ Firestore
@@ -22,6 +23,8 @@ function UsersTable() {
         };
         fetchData();
     }, []);
+
+    console.log(data);
 
     const columns = [
         {

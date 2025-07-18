@@ -68,3 +68,36 @@ export { db };
         name: "da thay doi"
     });
 */
+
+
+/*
+    const [data, setData] = useState([]);
+        
+        // Lấy dữ liệu từ Firestore (Top 3)
+        useEffect(() => {
+            const fetchData = async () => {
+                const q = query(
+                    collection(db, "Stastiques"), 
+                    orderBy("quantite", "desc"),
+                    limit(3)
+                ); 
+                const querySnapshot = await getDocs(q);
+                const top3 = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setData(top3);
+            };
+            fetchData();
+        }, []);
+*/
+
+/*
+    const handleClick = async () => {
+        const cash = document.getElementById("getData").value;
+        const ref = doc(db, "RevenueWeek", "1");
+        await updateDoc(ref, {
+            Cash: cash
+        });
+    };
+*/

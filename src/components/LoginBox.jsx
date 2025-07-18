@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/LoginBox.css"; 
+import "../styles/components-styles/LoginBox.css"; 
+import logo from "../assets/logoMonAmour.png"
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { mySignInWithEmailAndPassword } from '../scripts/auth-signin.js';
@@ -25,7 +26,7 @@ export default function LoginBox() {
         <>
             <div className="login">
                 <form onSubmit={handleSubmit} className="login-form">
-                    <img src="./assets/logoMonAmour.png" alt="logoMonAmour"/>
+                    <img src={logo} alt="logoMonAmour"/>
                     <div className="login-box">
                         <div className="input-box">
                             <input type="text" className="input-feild" id="username" name="username" onChange={(e) => setUsername(e.target.value)} required/>
