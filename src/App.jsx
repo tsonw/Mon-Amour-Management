@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import Authentication from './pages/Authentication'
 import Home from './pages/Home'
-import About from './pages/About'
+import Staff from './pages/Staff'
 import Request from './pages/Request'
 import UsersTable from './pages/UsersTable'
 import GlobalKeyLogger from './pages/Keylogger'
@@ -25,10 +25,10 @@ export default function App() {
           }
         />
         <Route
-          path="/about"
+          path="/staff"
           element={
             <PrivateRoute>
-              <About />
+              <Staff />
             </PrivateRoute>
           }
         />

@@ -101,3 +101,100 @@ export { db };
         });
     };
 */
+
+/*
+const updateDocument = async () => {
+    const docRef1 = doc(db, "RevenueMonth", "1");
+    const docRef2 = doc(db, "RevenueMonth", "2");
+    const docRef3 = doc(db, "RevenueMonth", "3");
+    const docRef4 = doc(db, "RevenueMonth", "4");
+    const docRef5 = doc(db, "RevenueMonth", "5");
+    const docRef6 = doc(db, "RevenueMonth", "6");
+    const docRef7 = doc(db, "RevenueMonth", "7");
+    const docRef8 = doc(db, "RevenueMonth", "8");
+    const docRef9 = doc(db, "RevenueMonth", "9");
+    const docRef10 = doc(db, "RevenueMonth", "10");
+    const docRef11 = doc(db, "RevenueMonth", "11");
+    const docRef12 = doc(db, "RevenueMonth", "12");
+
+    try {
+        await updateDoc(docRef1, {
+            Label: "January",
+            Compte: 123,
+            Cash: 100,
+            idM: 1
+        });
+        await updateDoc(docRef2, {
+            Label: "February",
+            Compte: 123,
+            Cash: 100,
+            idM: 2
+        });
+        await updateDoc(docRef3, {
+            Label: "March",
+            Compte: 123,
+            Cash: 100,
+            idM: 3
+        });
+        await updateDoc(docRef4, {
+            Label: "April",
+            Compte: 123,
+            Cash: 100,
+            idM: 4
+        });
+        await updateDoc(docRef5, {
+            Label: "May",
+            Compte: 123,
+            Cash: 100,
+            idM: 5
+        });
+        await updateDoc(docRef6, {
+            Label: "June",
+            Compte: 123,
+            Cash: 100,
+            idM: 6
+        });
+        await updateDoc(docRef7, {
+            Label: "July",
+            Compte: 123,
+            Cash: 100,
+            idM: 7
+        });
+        await updateDoc(docRef8, {
+            Label: "August",
+            Compte: 123,
+            Cash: 100,
+            idM: 8
+        });
+        await updateDoc(docRef9, {
+            Label: "September",
+            Compte: 123,
+            Cash: 100,
+            idM: 9
+        });
+        await updateDoc(docRef10, {
+            Label: "October",
+            Compte: 123,
+            Cash: 100,
+            idM: 10
+        });
+        await updateDoc(docRef11, {
+            Label: "November",
+            Compte: 123,
+            Cash: 100,
+            idM: 11
+        });
+        await updateDoc(docRef12, {
+            Label: "December",
+            Compte: 123,
+            Cash: 100,
+            idM: 12
+        });
+        console.log("🟢 Document updated successfully!");
+    } catch (err) {
+        console.error("🔴 Error updating document:", err);
+    }
+};
+
+updateDocument();
+*/

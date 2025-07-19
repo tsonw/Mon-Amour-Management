@@ -27,23 +27,39 @@ ChartJS.register(
 
 export default function ChartPanel () {
 
-    const [data, setData] = useState([]);
+    const [dataWeek, setDataWeek] = useState([]);
+    const [dataMonth, setdataMonth] = useState([]);
     
     // Lấy dữ liệu từ Firestore (Chart)
     useEffect(() => {
         const fetchData = async () => {
-            const q = query(
+            const qW = query(
                 collection(db, "RevenueWeek")
-            ); 
-            const querySnapshot = await getDocs(q);
-            const chartWeek = querySnapshot.docs.map(doc => ({
+            );
+            const qM = query(
+                collection(db, "RevenueMonth"),
+                orderBy("idM", "asc")
+            );
+            
+            const querySnapshotW = await getDocs(qW);
+            const querySnapshotM = await getDocs(qM);
+
+            const chartWeek = querySnapshotW.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
             }));
-            setData(chartWeek);
+            const chartMonth = querySnapshotM.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+
+            setDataWeek(chartWeek);
+            setdataMonth(chartMonth);
         };
         fetchData();
     }, []);
+
+    console.log(dataMonth);
 
     return (
         <>
@@ -52,17 +68,17 @@ export default function ChartPanel () {
                     <div className="chart-graphic">
                         <Line
                             data={{
-                                labels: data.map((data) => data.Label),
+                                labels: dataWeek.map((data) => data.Label),
                                 datasets: [
                                     {
                                         label: "Compte",
-                                        data: data.map((data) => data.Compte),
+                                        data: dataWeek.map((data) => data.Compte),
                                         backgroundColor: "#263767",
                                         borderColor: "#1f618dff",
                                     },
                                     {
                                         label: "Cash",
-                                        data: data.map((data) => data.Cash),
+                                        data: dataWeek.map((data) => data.Cash),
                                         backgroundColor: "#EC1C24",
                                         borderColor: "#ff4000ff",
                                     },
@@ -101,17 +117,17 @@ export default function ChartPanel () {
                     <div className="chart-graphic">
                         <Line
                             data={{
-                                labels: data.map((data) => data.Label),
+                                labels: dataMonth.map((data) => data.Label),
                                 datasets: [
                                     {
                                         label: "Compte",
-                                        data: data.map((data) => data.Compte),
+                                        data: dataMonth.map((data) => data.Compte),
                                         backgroundColor: "#263767",
                                         borderColor: "#1f618dff",
                                     },
                                     {
                                         label: "Cash",
-                                        data: data.map((data) => data.Cash),
+                                        data: dataMonth.map((data) => data.Cash),
                                         backgroundColor: "#EC1C24",
                                         borderColor: "#ff4000ff",
                                     },
@@ -147,7 +163,7 @@ export default function ChartPanel () {
                     <h2 className="title-chart-sale-revenue">Doanh thu theo tháng</h2>
                 </div>
                 <div className="shortcut-bussiness">
-                    <button className="btn-shortcut-bussiness">Doanh thu</button>
+                    <button className="btn-shortcut-bussiness">Chi tiết doanh thu</button>
                 </div>
             </div>
         </>

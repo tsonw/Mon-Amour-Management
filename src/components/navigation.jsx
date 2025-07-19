@@ -27,7 +27,7 @@ export default function Navigation() {
                     <div className="main_function">
                         <a className="function_selection" href="/Home">Kiểm kho</a>
                         <a className="function_selection" href="/Home">Sản phẩm</a>
-                        <a className="function_selection" href="/Home">Nhân viên</a>
+                        <a className="function_selection" href="/Staff">Nhân viên</a>
                         <a className="function_selection" href="/Home">Doanh thu</a>
                     </div>
                     <button onClick={logout} className="btn_logout">Logout</button>

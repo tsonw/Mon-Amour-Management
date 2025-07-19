@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import emailjs from 'emailjs-com';
 import "../styles/components-styles/Request.css";
 
+import LogoMA from "../assets/logoMonAmour.png";
+
 export default function Request() {
 
     useEffect(() => {
@@ -42,7 +44,7 @@ export default function Request() {
         <>
             <div className="request">
                 <form id="contact-form" onSubmit={handleSubmit}>
-                    <img src="../assets/logoMonAmour.png" alt="logoMonAmour"/>
+                    <img src={LogoMA} alt="logoMonAmour"/>
                     <div className="login-box">
                         <h1>Registration Form</h1>
                         <div className="input-box">

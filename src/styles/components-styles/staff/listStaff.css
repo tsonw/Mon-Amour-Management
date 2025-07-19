@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-list-staff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 50px;
+}
+
+.title-list-staff {
+    font-family: "Lexend Deca", sans-serif;
+    margin-bottom: 2%;
+}
+
+.list-staff-card {
+    width: 95%;
+}
