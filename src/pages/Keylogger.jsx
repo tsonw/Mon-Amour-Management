@@ -1,4 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
+import { db } from "../scripts/get-document";
+
+import avtTony from "../assets/profile-avatar.jpg";
+
+const avatarMap = {
+    Tony: avtTony
+};
 
 function GlobalKeyLogger() {
     const [key, setKey] = useState('');
@@ -17,10 +25,24 @@ function GlobalKeyLogger() {
         };
     }, []);
 
+    const [imgSrc, setImgSrc] = useState("");
+
+    function testparametre (name) {
+        const img = document.getElementById("img_test");
+        if (name === "Tony") {
+            setImgSrc(avatarMap[name]); // link ảnh mẫu
+        }
+    }
+
     return (
         <div>
             <h1>Gõ bất kỳ đâu cũng bắt được luôn 🤖</h1>
             <p>Ký tự bạn vừa nhấn: {text}</p>
+            <button id="btn_test" onClick={() => testparametre("Tony")}>
+                Bấm để đổi ảnh
+            </button>
+
+            <img id="img_test" src={imgSrc} alt="Ảnh demo" />
         </div>
     );
 }

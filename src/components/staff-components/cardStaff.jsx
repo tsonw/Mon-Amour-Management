@@ -3,6 +3,7 @@ import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
 import { db } from "../../scripts/get-document";
 import "../../styles/components-styles/staff/cardStaff.css";
 
+import iconMA from "../../assets/iconMA.png";
 import avtTony from "../../assets/profile-avatar.jpg";
 
 const avatarMap = {
@@ -33,8 +34,6 @@ export default function CardStaff () {
         fetchData();
     }, []);
 
-    console.log(dataStaff);
-
     return (
         <>
             <div className="main-card-staff">
@@ -42,7 +41,7 @@ export default function CardStaff () {
                     <div key={item.id} className="item-card-staff">
                         <img className="avt-card-staff" src={avatarMap[item.Avatar]} alt="avt" draggable="false" />
                         <div className="text-content-card-staff">
-                            <img className="mini-avt-card-staff" src={avatarMap[item.Avatar]} alt="avt" draggable="false"/>
+                            <img className="mini-icon-card-staff" src={iconMA} alt="avt" draggable="false"/>
                             <div className="info-card-staff">
                                 <h3 className="name-card-staff">{item.Name}</h3>
                                 <p className="nickname-card-staff">@{item.Nickname}</p>

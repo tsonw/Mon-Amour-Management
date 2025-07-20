@@ -12,6 +12,9 @@
     "vite": "^7.0.0"
   },
   "dependencies": {
+    "@aldabil/react-scheduler": "^3.1.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@tanstack/react-table": "^8.21.3",
     "chart.js": "^4.5.0",
     "emailjs-com": "^3.2.0",

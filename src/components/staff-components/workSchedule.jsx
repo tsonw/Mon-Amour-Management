@@ -1,12 +1,174 @@
-import React from "react";
+import React, { useState, useEffect, act } from "react";
+import { collection, getDocs, query, limit, orderBy, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { db } from "../../scripts/get-document";
+import { Scheduler } from "@aldabil/react-scheduler";
 import "../../styles/components-styles/staff/workSchedule.css";
+import { SubTitle } from "chart.js";
+import Navigation from "../navigation";
 
 export default function WorkSchedule () {
+
+    const [dataWorkTimeStaff, setDataWorkTimeStaff] = useState([]);
+    const [dataStaff, setDataStaff] = useState([]);
+
+    // Hàm lấy dữ liệu từ DataBase
+    const fetchData = async () => {
+        const qWS = query(
+            collection(db, "WorktimeStaff")
+        );
+
+        const querySnapshotWS = await getDocs(qWS);
+
+        const dataWS = querySnapshotWS.docs.map(doc => ({
+            ...doc.data()
+        }));
+
+        setDataWorkTimeStaff(dataWS);
+    };
+
+    // Lấy dữ liệu từ Firestore (Chart)
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    // Chuyển file json thành object
+    const [myEvents, setMyEvents] = useState([]);
+    useEffect(() => {
+        const parsedEvents = dataWorkTimeStaff.map((doc) => ({
+            ...doc,
+            start: new Date(doc.start),
+            end: new Date(doc.end),
+        }));
+
+        setMyEvents(parsedEvents);
+    }, [dataWorkTimeStaff])
+
+    const listColorStaff = {
+        Tony: "#FFB82B",
+        Luxy: "#EB4886",
+        Lily: "#7ACBBE"
+    };
+
+    const handleConfirm = async (event, action) => {
+
+        console.log(action);
+
+        if (action === "create") {
+
+            // Viết lại chuỗi đúng format cho Start
+            const dateS = new Date(event.start);
+            const yearS = dateS.getFullYear();
+            const monthS = dateS.getMonth() + 1;
+            const dayS = dateS.getDate();
+            const hoursS = dateS.getHours();
+            const minutesS = dateS.getMinutes().toString().padStart(2, '0');
+            const formattedS = `${yearS}/${monthS}/${dayS} ${hoursS}:${minutesS}`;
+            
+            // Viết lại chuỗi đúng format cho End
+            const dateE = new Date(event.end);
+            const yearE = dateE.getFullYear();
+            const monthE = dateE.getMonth() + 1;
+            const dayE = dateE.getDate();
+            const hoursE = dateE.getHours();
+            const minutesE = dateE.getMinutes().toString().padStart(2, '0');
+            const formattedE = `${yearE}/${monthE}/${dayE} ${hoursE}:${minutesE}`;
+
+            setMyEvents((prev) =>
+                prev.map((e) => (e.event_id === event.event_id ? event : e))
+            );
+
+            // Thêm sự kiện mới vào DataBase
+            try {
+                await addDoc(collection(db, "WorktimeStaff"), {
+                    event_id: Date.now(),
+                    title: event.title,
+                    subTitle: event.subTitle || "",
+                    start: formattedS,
+                    end: formattedE,
+                    color: listColorStaff[event.title],
+                    editable: false
+                });
+                console.log("🟢 Document add successfully!");
+            } catch (err) {
+                console.error("🔴 Error add document:", err);
+            }
+            fetchData();
+        }
+        
+        setMyEvents((prev) => [...prev, event]);
+
+        return event; 
+    };
+
+    // Hàm xoá sự kiện trên lịch
+    async function handleDelete (id) {
+        if (window.confirm("Bạn có chắc chắn muốn xoá lịch này không?")) {
+            try {
+                // Xoá trên Firestore
+                const querySnapshot = await getDocs(collection(db, "WorktimeStaff"));
+                querySnapshot.forEach(async (docu) => {
+                    const data = docu.data();
+                    if (data.event_id === id) {
+                        await deleteDoc(doc(db, "WorktimeStaff", docu.id));
+                        console.log("✅ Xoá trên Firestore thành công!");
+                    }
+                });
+    
+                // Xoá trên UI
+                setMyEvents((prevEvents) =>
+                    prevEvents.filter((event) => event.event_id !== id)
+                );
+            } catch (err) {
+                console.error("❌ Xoá thất bại:", err);
+            }
+        }
+    }
 
     return (
         <>
             <div className="main-work-schedule">
-                <h1 className="title-work-schedule">Danh sách nhân viên Mon Amour</h1>
+                <h1 className="title-work-schedule">Lịch làm việc nhân viên trong tuần</h1>
+                <div className="work-schedule-panel">
+                    <Scheduler
+                        view="week"
+                        events={myEvents}
+                        onConfirm={handleConfirm}
+                        onDelete={handleDelete}
+                        translations={{
+                        navigation: {
+                                month: "Month",
+                                week: "Week",
+                                day: "Day",
+                                today: "Today",
+                                agenda: "Agenda"
+                            },
+                            form: {
+                                addTitle: "Nhập lịch làm việc của nhân viên",
+                                editTitle: "Edit Event",
+                                confirm: "Confirm",
+                                delete: "Delete",
+                                cancel: "Cancel"
+                            },
+                            event: {
+                                title: "Nhập tên của nhân viên (Nickname viết hoa chữ cái đầu)",
+                                subtitle: "note nếu cần",
+                                start: "Check in",
+                                end: "Check out",
+                                allDay: "All Day"
+                            },
+                            validation: {
+                                required: "Required",
+                                invalidEmail: "Invalid Email",
+                                onlyNumbers: "Only Numbers Allowed",
+                                min: "Minimum {{min}} letters",
+                                max: "Maximum {{max}} letters"
+                            },
+                            moreEvents: "More...",
+                            noDataToDisplay: "No data to display",
+                            loading: "Loading..."
+                        }}
+                    />
+                </div>
             </div>
         </>
     );

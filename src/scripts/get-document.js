@@ -102,24 +102,20 @@ export { db };
     };
 */
 
-/*
+// Script thêm dữ liệu vào trong db
+
 const updateDocument = async () => {
-    const docRef1 = doc(db, "RevenueMonth", "1");
-    const docRef2 = doc(db, "RevenueMonth", "2");
-    const docRef3 = doc(db, "RevenueMonth", "3");
-    const docRef4 = doc(db, "RevenueMonth", "4");
-    const docRef5 = doc(db, "RevenueMonth", "5");
-    const docRef6 = doc(db, "RevenueMonth", "6");
-    const docRef7 = doc(db, "RevenueMonth", "7");
-    const docRef8 = doc(db, "RevenueMonth", "8");
-    const docRef9 = doc(db, "RevenueMonth", "9");
-    const docRef10 = doc(db, "RevenueMonth", "10");
-    const docRef11 = doc(db, "RevenueMonth", "11");
-    const docRef12 = doc(db, "RevenueMonth", "12");
+    const docRef1 = doc(db, "WorkTime", "1");
+    const docRef2 = doc(db, "WorkTime", "2");
+    const docRef3 = doc(db, "WorkTime", "3");
+    const docRef4 = doc(db, "WorkTime", "4");
+    const docRef5 = doc(db, "WorkTime", "5");
+    const docRef6 = doc(db, "WorkTime", "6");
+    const docRef7 = doc(db, "WorkTime", "7");
 
     try {
         await updateDoc(docRef1, {
-            Label: "January",
+            Day: "January",
             Compte: 123,
             Cash: 100,
             idM: 1
@@ -160,41 +156,8 @@ const updateDocument = async () => {
             Cash: 100,
             idM: 7
         });
-        await updateDoc(docRef8, {
-            Label: "August",
-            Compte: 123,
-            Cash: 100,
-            idM: 8
-        });
-        await updateDoc(docRef9, {
-            Label: "September",
-            Compte: 123,
-            Cash: 100,
-            idM: 9
-        });
-        await updateDoc(docRef10, {
-            Label: "October",
-            Compte: 123,
-            Cash: 100,
-            idM: 10
-        });
-        await updateDoc(docRef11, {
-            Label: "November",
-            Compte: 123,
-            Cash: 100,
-            idM: 11
-        });
-        await updateDoc(docRef12, {
-            Label: "December",
-            Compte: 123,
-            Cash: 100,
-            idM: 12
-        });
         console.log("🟢 Document updated successfully!");
     } catch (err) {
         console.error("🔴 Error updating document:", err);
     }
 };
-
-updateDocument();
-*/

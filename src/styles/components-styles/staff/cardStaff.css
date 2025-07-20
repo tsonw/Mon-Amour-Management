@@ -33,11 +33,14 @@
     background: linear-gradient(0deg, #000000da 0%, #0000006b 50%, #00000000 100%);
 }
 
-.mini-avt-card-staff {
-    width: 12%;
+.mini-icon-card-staff {
+    width: 13%;
     aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    padding: 2%;
     border-radius: 50px;
-    border: #ffffff solid 2px;
+    border: #EC1C24 solid 3px;
+    box-shadow: 0px 0px 10px #00000051;
 }
 
 .name-card-staff {
