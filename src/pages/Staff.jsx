@@ -5,6 +5,7 @@ import Navigation from '../components/navigation';
 import Footer from '../components/footer';
 import ListStaff from '../components/staff-components/listStaff';
 import WorkSchedule from '../components/staff-components/workSchedule';
+import CounterWorkTime from '../components/staff-components/counterWorkTime';
 
 export default function Staff() {
     
@@ -16,6 +17,7 @@ export default function Staff() {
             <Navigation />
             <ListStaff />
             <WorkSchedule />
+            <CounterWorkTime />
             <Footer />
         </div>
     );

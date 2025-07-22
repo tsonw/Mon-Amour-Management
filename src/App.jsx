@@ -7,6 +7,7 @@ import Staff from './pages/Staff'
 import Request from './pages/Request'
 import UsersTable from './pages/UsersTable'
 import GlobalKeyLogger from './pages/Keylogger'
+import Stock from './pages/Stock'
 
 export default function App() {
   return (
@@ -32,6 +33,13 @@ export default function App() {
             </PrivateRoute>
           }
         />
+        <Route 
+          path='/Stock'
+          element={
+            <PrivateRoute>
+              <Stock />
+            </PrivateRoute>
+          }/>
       </Routes>
     </>
   )

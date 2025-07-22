@@ -1,4 +1,4 @@
-import React, { useState, useEffect, act } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { collection, getDocs, query, limit, orderBy, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from "../../scripts/get-document";
 import { Scheduler } from "@aldabil/react-scheduler";
@@ -9,7 +9,6 @@ import Navigation from "../navigation";
 export default function WorkSchedule () {
 
     const [dataWorkTimeStaff, setDataWorkTimeStaff] = useState([]);
-    const [dataStaff, setDataStaff] = useState([]);
 
     // Hàm lấy dữ liệu từ DataBase
     const fetchData = async () => {
@@ -32,6 +31,7 @@ export default function WorkSchedule () {
     }, []);
 
     // Chuyển file json thành object
+    const eventsRef = useRef([]); 
     const [myEvents, setMyEvents] = useState([]);
     useEffect(() => {
         const parsedEvents = dataWorkTimeStaff.map((doc) => ({
@@ -40,7 +40,14 @@ export default function WorkSchedule () {
             end: new Date(doc.end),
         }));
 
-        setMyEvents(parsedEvents);
+        const isSame =
+            parsedEvents.length === eventsRef.current.length &&
+            parsedEvents.every((e, idx) => e.event_id === eventsRef.current[idx]?.event_id);
+
+        if (!isSame) {
+            setMyEvents(parsedEvents);
+            eventsRef.current = parsedEvents;
+        }
     }, [dataWorkTimeStaff])
 
     const listColorStaff = {
@@ -50,37 +57,19 @@ export default function WorkSchedule () {
     };
 
     const handleConfirm = async (event, action) => {
-
-        console.log(action);
-
         if (action === "create") {
-
             // Viết lại chuỗi đúng format cho Start
             const dateS = new Date(event.start);
-            const yearS = dateS.getFullYear();
-            const monthS = dateS.getMonth() + 1;
-            const dayS = dateS.getDate();
-            const hoursS = dateS.getHours();
-            const minutesS = dateS.getMinutes().toString().padStart(2, '0');
-            const formattedS = `${yearS}/${monthS}/${dayS} ${hoursS}:${minutesS}`;
+            const formattedS = `${dateS.getFullYear()}/${dateS.getMonth() + 1}/${dateS.getDate()} ${dateS.getHours()}:${dateS.getMinutes().toString().padStart(2, '0')}`;
             
             // Viết lại chuỗi đúng format cho End
             const dateE = new Date(event.end);
-            const yearE = dateE.getFullYear();
-            const monthE = dateE.getMonth() + 1;
-            const dayE = dateE.getDate();
-            const hoursE = dateE.getHours();
-            const minutesE = dateE.getMinutes().toString().padStart(2, '0');
-            const formattedE = `${yearE}/${monthE}/${dayE} ${hoursE}:${minutesE}`;
-
-            setMyEvents((prev) =>
-                prev.map((e) => (e.event_id === event.event_id ? event : e))
-            );
+            const formattedE = `${dateE.getFullYear()}/${dateE.getMonth() + 1}/${dateE.getDate()} ${dateE.getHours()}:${dateE.getMinutes().toString().padStart(2, '0')}`;
 
             // Thêm sự kiện mới vào DataBase
             try {
                 await addDoc(collection(db, "WorktimeStaff"), {
-                    event_id: Date.now(),
+                    event_id: crypto.randomUUID(),
                     title: event.title,
                     subTitle: event.subTitle || "",
                     start: formattedS,
@@ -89,13 +78,11 @@ export default function WorkSchedule () {
                     editable: false
                 });
                 console.log("🟢 Document add successfully!");
+                await fetchData();
             } catch (err) {
                 console.error("🔴 Error add document:", err);
             }
-            fetchData();
-        }
-        
-        setMyEvents((prev) => [...prev, event]);
+        } 
 
         return event; 
     };

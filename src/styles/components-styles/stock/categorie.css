@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-categorie-product-stock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #EC1C24 solid 5px;
+    border-radius: 30px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.panel-search-categorie-product-stock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #EC1C24;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+.type-box {
+    background-color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.label-text {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    margin-right: 10px;
+    color: #EC1C24;
+}
+
+.select-type {
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: #EC1C24 solid 2px;
+    color: #EC1C24;
+    background-color: #ffffff;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.search-box {
+    background-color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.input-search {
+    width: 60%;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: #EC1C24 solid 2px;
+    color: #EC1C24;
+    background-color: #ffffff;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.button-search {
+    width: 15%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: #EC1C24 solid 2px;
+    color: #EC1C24;
+    background-color: #ffffff;
+    font-family: "Lexend Deca", sans-serif;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.button-search:hover {
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #EC1C24;
+}
+
+.button-search:active {
+    background-color: #a51318;
+    scale: 0.95;
+}

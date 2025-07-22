@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-counter-work-time {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.counter-work-time-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.title-counter-work-time {
+    font-family: "Lexend Deca", sans-serif;
+    margin-bottom: 2%;
+}
+
+.table-work-time {
+    width: 80%;
+}
+
+.table-work-time thead {
+    background-color: #EC1C24;
+    color: #ffffff;
+}
+
+.table-work-time th {
+    padding: 10px 20px;
+    border: #EC1C24 solid 2px;
+}
+
+.table-work-time td {
+    padding: 20px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    border: #EC1C24 solid 1px;
+}

@@ -43,10 +43,9 @@ export default function CardStaff () {
                         <div className="text-content-card-staff">
                             <img className="mini-icon-card-staff" src={iconMA} alt="avt" draggable="false"/>
                             <div className="info-card-staff">
-                                <h3 className="name-card-staff">{item.Name}</h3>
+                                <h2 className="name-card-staff">{item.Name}</h2>
                                 <p className="nickname-card-staff">@{item.Nickname}</p>
                             </div>
-                            <button className="btn-card-staff">Chi tiết</button>
                         </div>
                     </div>
                 ))}

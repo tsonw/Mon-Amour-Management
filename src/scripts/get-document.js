@@ -161,3 +161,27 @@ const updateDocument = async () => {
         console.error("🔴 Error updating document:", err);
     }
 };
+
+// Them data vao database
+/*
+const docRef1 = await addDoc(collection(db, "produit"), {
+        name: "mango",
+});
+*/
+
+// Lắng nghe sự thay đổi của DB
+/*
+useEffect(() => {
+    const unsub = onSnapshot(
+        collection(db, "WorktimeStaff"),
+        (snapshot) => {
+            const updatedData = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setData(updatedData);
+        }
+    );
+    return () => unsub();
+}, []);
+*/

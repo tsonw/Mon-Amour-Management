@@ -25,7 +25,7 @@ export default function Navigation() {
                 <a href="/Home" className="nav_Logo_link"><img src={logo} className="nav_Logo" draggable="false" alt="Logo" /></a>
                 <div className="function_selector">
                     <div className="main_function">
-                        <a className="function_selection" href="/Home">Kiểm kho</a>
+                        <a className="function_selection" href="/Stock">Kiểm kho</a>
                         <a className="function_selection" href="/Home">Sản phẩm</a>
                         <a className="function_selection" href="/Staff">Nhân viên</a>
                         <a className="function_selection" href="/Home">Doanh thu</a>
