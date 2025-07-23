@@ -4,6 +4,7 @@ import { db } from "../../scripts/get-document";
 
 import "../../styles/components-styles/stock/listProductStock.css";
 import CategorieProductStock, { test } from "./categorieProductStock";
+import LinkToUpdateProduct from "./linkToUpdateProduct";
 
 
 export default function ListProductStock () {
@@ -14,6 +15,9 @@ export default function ListProductStock () {
                 <h1 className="title-list-product-stock">Danh sách nguyên liệu trong kho</h1>
                 <div className="categorie-list-product-stock">
                     <CategorieProductStock />
+                </div>
+                <div className="function-update-product-stock">
+                    <LinkToUpdateProduct />
                 </div>
             </div>
         </>

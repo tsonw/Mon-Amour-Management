@@ -8,6 +8,7 @@ import Request from './pages/Request'
 import UsersTable from './pages/UsersTable'
 import GlobalKeyLogger from './pages/Keylogger'
 import Stock from './pages/Stock'
+import UpdateProduct from './pages/Subpage-stock/UpdateProduct'
 
 export default function App() {
   return (
@@ -39,7 +40,16 @@ export default function App() {
             <PrivateRoute>
               <Stock />
             </PrivateRoute>
-          }/>
+          }
+        />
+        <Route 
+          path='/Stock/Update'
+          element={
+            <PrivateRoute>
+              <UpdateProduct />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </>
   )
