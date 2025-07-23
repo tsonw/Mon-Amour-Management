@@ -74,6 +74,29 @@ export default function CategorieProductStock () {
         fetchData(q);
     }
 
+    // Search box by name
+    const searchByNameProduct = () => {
+
+        // Lấy text cần tìm kiếm
+        const input = document.getElementById("textBoxSearch").value;
+
+        // Viết hoa chữ cái đầu của mỗi giá trị tìm kiếm
+        const textSearch = input.charAt(0).toUpperCase() + input.slice(1);
+
+        // Thực hiện truy vấn với giá trị tìm kiếm
+        const q = query(
+        collection(db, "ProductStock"),
+            orderBy("name"),
+
+            // Thực hiện truy vấn có điều kiến khi chỉ nhập một phần của giá trị
+            // Ex : Man -> Mangue
+            // Giống Like trong SQL
+            where("name", ">=", textSearch),
+            where("name", "<", textSearch + "\uf8ff")
+        );
+        fetchData(q);
+    }
+
     return (
         <>
             <div className="main-categorie-product-stock">
@@ -97,7 +120,7 @@ export default function CategorieProductStock () {
                     <div className="search-box">    
                         <label className="label-text" htmlFor="name">Name product :</label>
                         <input className="input-search" id="textBoxSearch" type="text" />
-                        <button className="button-search">Search</button>
+                        <button className="button-search" onClick={searchByNameProduct}>Search</button>
                     </div>
                 </div>
                 <div className="table-product-stock">

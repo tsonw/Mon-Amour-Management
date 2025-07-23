@@ -11,7 +11,7 @@ export default function ListProductStock () {
     return (
         <>
             <div className="main-list-product-stock">
-                <h1 className="title-list-product-stock">Danh sách nguyên liêu trong kho</h1>
+                <h1 className="title-list-product-stock">Danh sách nguyên liệu trong kho</h1>
                 <div className="categorie-list-product-stock">
                     <CategorieProductStock />
                 </div>
