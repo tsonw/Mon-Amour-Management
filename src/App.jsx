@@ -9,6 +9,7 @@ import UsersTable from './pages/UsersTable'
 import GlobalKeyLogger from './pages/Keylogger'
 import Stock from './pages/Stock'
 import UpdateProduct from './pages/Subpage-stock/UpdateProduct'
+import HistoryUpdate from './pages/Subpage-stock/HistoryUpdate'
 
 export default function App() {
   return (
@@ -47,6 +48,14 @@ export default function App() {
           element={
             <PrivateRoute>
               <UpdateProduct />
+            </PrivateRoute>
+          }
+        />
+        <Route 
+          path='/Stock/History'
+          element={
+            <PrivateRoute>
+              <HistoryUpdate />
             </PrivateRoute>
           }
         />

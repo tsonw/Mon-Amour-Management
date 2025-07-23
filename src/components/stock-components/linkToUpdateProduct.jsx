@@ -8,7 +8,7 @@ export default function LinkToUpdateProduct () {
         <>
             <div className="main-link-update-product">
                 <a className="link-update-product" href="/Stock/Update">Update product quantity</a>
-                <a className="link-update-product" href="/stock">Update history</a>
+                <a className="link-update-product" href="/Stock/History">Update history</a>
             </div>
         </>
     );

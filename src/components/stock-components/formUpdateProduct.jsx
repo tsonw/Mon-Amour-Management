@@ -48,12 +48,17 @@ export default function FormUpdateProduct () {
 
         // Hàm cho phép thêm thông tin vào trong nhật ký
         const addDataHistoryUpdateStock = async (userEmail, code, nameProduct, quantityUpdate) => {
+            // Lấy ngày hiện tại và format lại định dạng
+            const today = new Date();
+            const dayFormatted = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes().toString().padStart(2, '0')}`;
+
             try {
                 const docRef = await addDoc(collection(db, "HistoryUpdateStock"), {
                     userEmail: userEmail,
                     code: code,
                     nameProduct: nameProduct,
-                    quantityUpdate: quantityUpdate
+                    quantityUpdate: quantityUpdate,
+                    date: dayFormatted
                 });
             } catch (error) {
                 console.error(error);

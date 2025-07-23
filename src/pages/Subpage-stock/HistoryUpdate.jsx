@@ -2,17 +2,17 @@ import React from "react";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import FormUpdateProduct from "../../components/stock-components/formUpdateProduct";
+import TableHistoryUpdate from "../../components/stock-components/tableHistoryUpdate";
 
-export default function UpdateProduct () {
+export default function HistoryUpdate () {
 
-    document.title = "Form Update | Mon Amour"
-
+    document.title = "History Update | Mon Amour"
 
     return (
         <>
-            <div id="UpdateProduct">
+            <div id="HistoryUpdate">
                 <Navigation />
-                <FormUpdateProduct />
+                <TableHistoryUpdate />
                 <Footer />
             </div>
         </>
