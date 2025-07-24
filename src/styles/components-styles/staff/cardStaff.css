@@ -3,15 +3,16 @@
 .main-card-staff {
     display: flex;
     justify-content: space-evenly;
-    padding: 2% 0;
+    padding: 20px;
+    gap: 20px;
     border-radius: 30px;    
     border: #EC1C24 solid 2px;
 }
 
 .item-card-staff {
     margin: 10px;
-    width: 30%;
     height: 65vh;
+    aspect-ratio: 1 / 1.4 ;
     position: relative;
     overflow: hidden;
     border-radius: 20px;

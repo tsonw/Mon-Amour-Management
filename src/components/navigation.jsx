@@ -26,7 +26,7 @@ export default function Navigation() {
                 <div className="function_selector">
                     <div className="main_function">
                         <a className="function_selection" href="/Stock">Kiểm kho</a>
-                        <a className="function_selection" href="/Home">Sản phẩm</a>
+                        <a className="function_selection" href="/Product">Sản phẩm</a>
                         <a className="function_selection" href="/Staff">Nhân viên</a>
                         <a className="function_selection" href="/Home">Doanh thu</a>
                     </div>

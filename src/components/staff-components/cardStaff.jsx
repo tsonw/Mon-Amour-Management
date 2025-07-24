@@ -4,10 +4,12 @@ import { db } from "../../scripts/get-document";
 import "../../styles/components-styles/staff/cardStaff.css";
 
 import iconMA from "../../assets/iconMA.png";
-import avtTony from "../../assets/profile-avatar.jpg";
+import avtTony from "../../assets/profile-avatar-tony.jpg";
+import avtLily from "../../assets/profile-avatar-lily.jpg";
 
 const avatarMap = {
-    Tony: avtTony
+    Tony: avtTony,
+    Lily: avtLily
 };
 
 

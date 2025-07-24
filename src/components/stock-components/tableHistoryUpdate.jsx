@@ -42,9 +42,6 @@ export default function TableHistoryUpdate () {
         }
     }, []);
 
-    console.log(dataHistory);
-    console.log(dataUser);
-
     const findNameUserByEmail = (email) => {
         for (const item of dataUser) {
             if (item.email == email) {

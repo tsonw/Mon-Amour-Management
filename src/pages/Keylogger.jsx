@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
 import { db } from "../scripts/get-document";
 
-import avtTony from "../assets/profile-avatar.jpg";
+import avtTony from "../assets/profile-avatar-tony.jpg";
 
 const avatarMap = {
     Tony: avtTony

@@ -1,6 +1,6 @@
 // vite.config.js
 export default {
-    base: './',
+    base: '/',
     build: {
         outDir: 'dist', // nơi chứa sản phẩm build ra để deploy
     }

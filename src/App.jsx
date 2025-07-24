@@ -10,6 +10,7 @@ import GlobalKeyLogger from './pages/Keylogger'
 import Stock from './pages/Stock'
 import UpdateProduct from './pages/Subpage-stock/UpdateProduct'
 import HistoryUpdate from './pages/Subpage-stock/HistoryUpdate'
+import Product from './pages/Product'
 
 export default function App() {
   return (
@@ -24,14 +25,6 @@ export default function App() {
           element={
             <PrivateRoute>
               <Home />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/staff"
-          element={
-            <PrivateRoute>
-              <Staff />
             </PrivateRoute>
           }
         />
@@ -56,6 +49,22 @@ export default function App() {
           element={
             <PrivateRoute>
               <HistoryUpdate />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <PrivateRoute>
+              <Product />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/staff"
+          element={
+            <PrivateRoute>
+              <Staff />
             </PrivateRoute>
           }
         />

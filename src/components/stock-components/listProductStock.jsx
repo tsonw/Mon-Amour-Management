@@ -3,7 +3,7 @@ import { query, collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "../../scripts/get-document";
 
 import "../../styles/components-styles/stock/listProductStock.css";
-import CategorieProductStock, { test } from "./categorieProductStock";
+import CategorieProductStock from "./categorieProductStock";
 import LinkToUpdateProduct from "./linkToUpdateProduct";
 
 

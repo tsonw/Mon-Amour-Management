@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-list-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-list-product {
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+}
+
+.category-list-product {
+    width: 100%;
+    padding: 30px;
+}
+
+.panel-search-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(38, 55, 103, 0.5);
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.search-box-list-product-type {
+    background-color: #ffffff;
+    border: #EC1C24 solid 2px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.select-search-box-list-product {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+    width: 100%;
+    outline: none;
+}
+
+.search-box-list-product-name {
+    background-color: #ffffff;
+    border: #EC1C24 solid 2px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.label-search-box-list-product {
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+    margin-right: 10px;
+}
+
+.input-search-box-list-product {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+    width: 100%;
+    outline: none;
+    border: #263767 solid 1px;
+}
+
+.input-search-box-list-product:focus {
+    border: #EC1C24 solid 2px;
+    font-weight: 500;
+    box-shadow: 0px 0px 10px rgba(38, 55, 103, 0.3);
+}
+
+.btn-search-box-list-product {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #EC1C24;
+    outline: none;
+    border: #EC1C24 solid 1px;
+}
+
+.btn-search-box-list-product:hover {
+    background-color: #ff0008;
+}
+
+.btn-search-box-list-product:active {
+    background-color: #cc0007;
+    transform: scale(0.97);
+}
+
+
+/** Card Product **/
+
+.list-product-card {
+    width: 96vw;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    border: #EC1C24 solid 3px;
+    border-radius: 30px;
+    padding: 50px;
+
+}
+
+.item-card-product {
+    border-radius: 30px;
+    width: 100%;
+    aspect-ratio: 3/5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-rows: 7fr 3fr;
+    overflow: hidden;
+    position: relative;
+}
+
+.panel-image-card-product {
+    width: 100%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.image-card-product {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    border: #ffffff solid 3px;
+}
+
+.panel-text-card-product {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    position: absolute;
+    width: calc(100%);
+    height: 30%;
+    bottom: 0;
+    border-radius: 20px;
+    border: #ffffff solid 2px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-product-card {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 800;
+    color: #EC1C24;
+    margin: 5px 0px 5px 0px;
+}
+
+.code-product-card {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    color: #263767;
+    margin: 0px 0px 20px 0px;
+}
+
+.price-product-card {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    color: #263767;
+}

@@ -36,8 +36,12 @@ export default function FormUpdateProduct () {
             id: doc.id,
             code: doc.code,
             name: doc.name,
-            update: Number(document.getElementById(doc.id).value)
+            quantity: doc.quantity,
+            usage: Number(document.getElementById(`use${doc.id}`).value),
+            import: Number(document.getElementById(`import${doc.id}`).value)
         }));
+
+        console.log(dataUpdate);
 
         let count = 0;
         for (const item of dataUpdate) {
@@ -73,21 +77,22 @@ export default function FormUpdateProduct () {
             if (window.confirm("Bạn chắc chắn muốn Update")) {
                 for (const item of dataUpdate) {
                     // Chỉ thực hiện thay đổi những nơi có giá trị update != 0
-                    if (item.update != 0) {
+                    if (item.usage != 0 || item.import != 0) {
                         const docRef = doc(db, "ProductStock", item.id);
                         await updateDoc(docRef, {
-                            quantity: item.update
+                            quantity: item.quantity + item.import - item.usage
                         });
 
                         // Lưu vào nhật ký thay đổi
-                        addDataHistoryUpdateStock(user.email, item.code, item.name, item.update);
+                        addDataHistoryUpdateStock(user.email, item.code, item.name, item.quantity + item.import - item.import);
                     }
                 }
             }
 
             // Clear content trong input
             for (const item of dataUpdate) {
-                document.getElementById(item.id).value = "";
+                document.getElementById(`use${item.id}`).value = "";
+                document.getElementById(`import${item.id}`).value = "";
             }
         }
     }
@@ -97,7 +102,8 @@ export default function FormUpdateProduct () {
         
         // Clear content trong input
         for (const item of dataProductStock) {
-            document.getElementById(item.id).value = "";
+            document.getElementById(`use${item.id}`).value = "";
+            document.getElementById(`import${item.id}`).value = "";
         }
     }
 
@@ -116,7 +122,8 @@ export default function FormUpdateProduct () {
                                 <td>Name</td>
                                 <td>Type</td>
                                 <td>Remaining quantity</td>
-                                <td>Updated quantity</td>
+                                <td>Usage</td>
+                                <td>Import</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -127,7 +134,10 @@ export default function FormUpdateProduct () {
                                     <td>{item.category}</td>
                                     <td>{item.quantity}</td>
                                     <td>
-                                        <input className="input-quantity" type="number" id={item.id} required/>
+                                        <input className="input-quantity" type="number" id={`use${item.id}`} required/>
+                                    </td>
+                                    <td>
+                                        <input className="input-quantity" type="number" id={`import${item.id}`} required/>
                                     </td>
                                 </tr>
                             ))}

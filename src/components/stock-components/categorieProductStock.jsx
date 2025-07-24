@@ -4,11 +4,6 @@ import { getDocs, collection, onSnapshot, query, where, orderBy } from "firebase
 
 import "../../styles/components-styles/stock/categorie.css";
 
-const test = () => {
-    console.log("OK");
-    return ["1"];
-}
-
 export default function CategorieProductStock () {
 
     // Data product
@@ -149,5 +144,3 @@ export default function CategorieProductStock () {
         </>
     );
 }
-
-export { test };
