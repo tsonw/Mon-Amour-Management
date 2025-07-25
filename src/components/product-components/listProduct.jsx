@@ -8,30 +8,102 @@ import photo1 from "../../assets/Raw/Raw_0000s_0008_Layer-23.png";
 
 // Cafe
 import CafeAuLait from "../../assets/ImageProduct/cafe/cfsua.jpg";
+import CafePhomai from "../../assets/ImageProduct/cafe/cfphomai.jpg";
+import CafeDauPhong from "../../assets/ImageProduct/cafe/cfdauphong.jpg";
+import CafeDen from "../../assets/ImageProduct/cafe/cafeden.jpg";
+import Bacxiu from "../../assets/ImageProduct/cafe/bacxiu.jpg";
+
+// Frappe
+import MangueFrappe from "../../assets/ImageProduct/frappe/mango.jpg";
+import FraiseFrappe from "../../assets/ImageProduct/frappe/fraise.jpg";
+import DragonFrappe from "../../assets/ImageProduct/frappe/dragon.jpg";
+import AnanasFrappe from "../../assets/ImageProduct/frappe/pineapple.jpg";
 
 // Thé au lait
 import TheAuLaitMatcha from "../../assets/ImageProduct/TheAuLait/matcha.jpg";
+import TheAuLaitNoir from "../../assets/ImageProduct/TheAuLait/black.jpg";
+import TheAuLaitCafe from "../../assets/ImageProduct/TheAuLait/cafe.jpg";
+import TheAuLaitChoco from "../../assets/ImageProduct/TheAuLait/choco.jpg";
+import TheAuLaitHokkaido from "../../assets/ImageProduct/TheAuLait/hokkaido.jpg";
+import TheAuLaitJasmin from "../../assets/ImageProduct/TheAuLait/jasmin.jpg";
+import TheAuLaitTaro from "../../assets/ImageProduct/TheAuLait/taro.jpg";
+import TheAuLaitThai from "../../assets/ImageProduct/TheAuLait/thai.jpg";
+import TheAuLaitVani from "../../assets/ImageProduct/TheAuLait/vanila.jpg";
+import TheAuLaitCoco from "../../assets/ImageProduct/TheAuLait/coco.jpg";
 
 // Thé au fruit
 import ThePeach from "../../assets/ImageProduct/fruit/peche.jpg";
+import TheMango from "../../assets/ImageProduct/fruit/mango.jpg";
+import ThePassion from "../../assets/ImageProduct/fruit/passion.jpg";
+import TheFraise from "../../assets/ImageProduct/fruit/fraise.jpg";
+import TheLitchi from "../../assets/ImageProduct/fruit/litchi.jpg";
+import TheRoseLitchi from "../../assets/ImageProduct/fruit/roselichi.jpg";
+import TheDragon from "../../assets/ImageProduct/fruit/dragon.jpg";
+import TheAnanas from "../../assets/ImageProduct/fruit/pineapple.jpg";
+import TheKumquat from "../../assets/ImageProduct/fruit/kumquat.jpg";
+import TheMelon from "../../assets/ImageProduct/fruit/melon.jpg";
+import TheCorossol from "../../assets/ImageProduct/fruit/mangcau.jpg";
+
+// Matcha
+import MatchaLatte from "../../assets/ImageProduct/matcha/latte.jpg";
+import MatchaFrappe from "../../assets/ImageProduct/matcha/daxay.jpg";
+import MatchaRedBean from "../../assets/ImageProduct/matcha/daudo.jpg";
+import MatchaCoco from "../../assets/ImageProduct/matcha/coco.jpg";
 
 // Brun Sugar
 import MatchaBrunSugar from "../../assets/ImageProduct/brunsugar/matcha.jpg";
+import BrunSugar from "../../assets/ImageProduct/brunsugar/normal.jpg";
+
+// Yaourt
+import YaourtMixe from "../../assets/ImageProduct/suachua/mixe.jpg";
+import YaourtTapioca from "../../assets/ImageProduct/suachua/tapioca.jpg";
 
 const ListProductImage = {
     // Cafe
     "Café au lait": CafeAuLait,
+    "Café au fromage": CafePhomai,
+    "Café aux cacahuète": CafeDauPhong,
+    "Café noir": CafeDen,
+    "Bạc xỉu": Bacxiu,
+    // Frappe
+    "Mangue frappé": MangueFrappe,
+    "Fraise frappé": FraiseFrappe,
+    "Dragon fruit frappé": DragonFrappe,
+    "Ananas frappé": AnanasFrappe,
     // The au fruit
-    "Thé à la peach":ThePeach,
+    "Thé à la peach": ThePeach,
+    "Thé à la mangue": TheMango,
+    "Thé à la passion": ThePassion,
+    "Thé à la fraise": TheFraise,
+    "Thé au litchi": TheLitchi,
+    "Thé rose mixe litchi": TheRoseLitchi,
+    "Thé au fruit de dragon": TheDragon,
+    "Thé à l'ananas": TheAnanas,
+    "Thé au kumquat": TheKumquat,
+    "Thé au melon": TheMelon,
+    "Thé au corossol": TheCorossol,
     // Matcha
-    "Thé au lait au café": TheAuLaitMatcha,
-    "milktea": photo1,
-    "coffee": photo1,
-    "frappe": photo1,
-    "fruittea": photo1,
-    "matcha": TheAuLaitMatcha,
-    "brownsugar": MatchaBrunSugar,
-    "yogurt": photo1
+    "Matcha latte": MatchaLatte,
+    "Matcha frappé": MatchaFrappe,
+    "Matcha haricot rouge": MatchaRedBean,
+    "Matcha au coco": MatchaCoco,
+    // Thé au lait
+    "Thé matcha au lait": TheAuLaitMatcha,
+    "Thé noir au lait": TheAuLaitNoir,
+    "Thé jasmin au lait": TheAuLaitJasmin,
+    "Vanessa's Vanilla": TheAuLaitVani,
+    "Thé Bangkok au lait": TheAuLaitThai,
+    "Thé au lait au taro": TheAuLaitTaro,
+    "Thé au lait au café": TheAuLaitCafe,
+    "Thé au lait au coco": TheAuLaitCoco,
+    "Thé Hokkaido au lait": TheAuLaitHokkaido,
+    "Thé au lait au chocolat": TheAuLaitChoco,
+    // Sucre Brun
+    "Sucre brun": BrunSugar,
+    "Matcha sucre brun": MatchaBrunSugar,
+    // Yaourt
+    "Yaourt mixé (jam/ fruits)": YaourtMixe,
+    "Yaourt aux perles de tapioca": YaourtTapioca
 }
 
 
@@ -132,6 +204,9 @@ export default function ListProduct () {
             fetchData(q);
         }
 
+        // Xoá nội dung tìm kiếm sau khi nhận search
+        document.getElementById("textBoxSearch").value = "";
+
     }
     
     console.log(dataProductFilter);
@@ -167,13 +242,18 @@ export default function ListProduct () {
                         <div key={item.id} className="item-card-product" >
                             <div className="panel-image-card-product" >
                                 <img className="image-card-product" src={ListProductImage[item.name]}  alt="image" draggable="false" />
+                                <div className="panel-price-product-card">
+                                    <div className="sub-top-price-product-card"></div>
+                                    <h2 className="price-product-card">€ {item.priceM} {item.priceL ? ` - € ${item.priceL}` : ""}</h2>
+                                    <div className="sub-bottom-price-product-card"></div>
+                                </div>
                             </div>
                             <div className="panel-text-card-product">
                                 <h2 className="title-product-card">{item.name}</h2>
-                                <h5 className="code-product-card">Code : {item.code}</h5>
-                                <h1 className="price-product-card">
-                                    € {item.priceM} {item.priceL ? ` - € ${item.priceL}` : ""}
-                                </h1>
+                                <div className="detail-info-product-card">
+                                    <h4 className="code-product-card">Code : {item.code}</h4>
+                                    <a className="link-detail-product-card">Details</a>
+                                </div>
                             </div>
                         </div>
                     ))}
