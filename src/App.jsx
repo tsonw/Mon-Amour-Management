@@ -11,6 +11,7 @@ import Stock from './pages/Stock'
 import UpdateProduct from './pages/Subpage-stock/UpdateProduct'
 import HistoryUpdate from './pages/Subpage-stock/HistoryUpdate'
 import Product from './pages/Product'
+import DetailProduct from './pages/Subpage-product/DetailProduct'
 
 export default function App() {
   return (
@@ -57,6 +58,14 @@ export default function App() {
           element={
             <PrivateRoute>
               <Product />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/product/detail/:code"
+          element={
+            <PrivateRoute>
+              <DetailProduct />
             </PrivateRoute>
           }
         />

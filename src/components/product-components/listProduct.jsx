@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { query, collection, orderBy, where, onSnapshot, getDocs } from "firebase/firestore";
 import { db } from "../../scripts/get-document";
+import { useNavigate } from "react-router-dom";
 
 import "../../styles/components-styles/product/listProduct.css";
-
-import photo1 from "../../assets/Raw/Raw_0000s_0008_Layer-23.png";
 
 // Cafe
 import CafeAuLait from "../../assets/ImageProduct/cafe/cfsua.jpg";
@@ -106,8 +105,9 @@ const ListProductImage = {
     "Yaourt aux perles de tapioca": YaourtTapioca
 }
 
-
 export default function ListProduct () {
+
+    const navigate = useNavigate();
 
     // Data Product
     const [dataProduct, setDataProduct] = useState([]);
@@ -208,8 +208,10 @@ export default function ListProduct () {
         document.getElementById("textBoxSearch").value = "";
 
     }
-    
-    console.log(dataProductFilter);
+
+    const ToDetailPage = (code) => {
+        navigate(`/product/detail/${code}`);
+    }
 
     return (
         <>
@@ -252,7 +254,12 @@ export default function ListProduct () {
                                 <h2 className="title-product-card">{item.name}</h2>
                                 <div className="detail-info-product-card">
                                     <h4 className="code-product-card">Code : {item.code}</h4>
-                                    <a className="link-detail-product-card">Details</a>
+                                    <button 
+                                        className="link-detail-product-card"
+                                        onClick={() => ToDetailPage(item.code)}
+                                    >
+                                        Details
+                                    </button>
                                 </div>
                             </div>
                         </div>

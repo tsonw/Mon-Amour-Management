@@ -19,7 +19,8 @@ const addDataProductCoffee = async () => {
             category: "coffee",
             priceM: 6, 
             priceL: 6,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "CF-02",
@@ -27,7 +28,8 @@ const addDataProductCoffee = async () => {
             category: "coffee",
             priceM: 6, 
             priceL: 6,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef3 = await addDoc(collection(db, "Product"), {
             code: "CF-03",
@@ -35,7 +37,8 @@ const addDataProductCoffee = async () => {
             category: "coffee",
             priceM: 6, 
             priceL: 6,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef4 = await addDoc(collection(db, "Product"), {
             code: "CF-04",
@@ -43,7 +46,8 @@ const addDataProductCoffee = async () => {
             category: "coffee",
             priceM: 6, 
             priceL: 6,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef5 = await addDoc(collection(db, "Product"), {
             code: "CF-05",
@@ -51,7 +55,8 @@ const addDataProductCoffee = async () => {
             category: "coffee",
             priceM: 6, 
             priceL: 6,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         console.log("Coffee thêm thành công với ID:", docRef1.id);
         console.log("Coffee thêm thành công với ID:", docRef2.id);
@@ -72,7 +77,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "MT-02",
@@ -80,7 +86,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef3 = await addDoc(collection(db, "Product"), {
             code: "MT-03",
@@ -88,7 +95,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef4 = await addDoc(collection(db, "Product"), {
             code: "MT-04",
@@ -96,7 +104,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef5 = await addDoc(collection(db, "Product"), {
             code: "MT-05",
@@ -104,7 +113,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef6 = await addDoc(collection(db, "Product"), {
             code: "MT-06",
@@ -112,7 +122,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef7 = await addDoc(collection(db, "Product"), {
             code: "MT-07",
@@ -120,7 +131,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef8 = await addDoc(collection(db, "Product"), {
             code: "MT-08",
@@ -128,7 +140,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef9 = await addDoc(collection(db, "Product"), {
             code: "MT-09",
@@ -136,7 +149,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef10 = await addDoc(collection(db, "Product"), {
             code: "MT-10",
@@ -144,7 +158,8 @@ const addDataProductMilkTea = async () => {
             category: "milktea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Milk tea thêm thành công với ID:", docRef1.id);
@@ -171,7 +186,8 @@ const addDataProductFrappe = async () => {
             category: "frappe",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "FP-02",
@@ -179,7 +195,8 @@ const addDataProductFrappe = async () => {
             category: "frappe",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef3 = await addDoc(collection(db, "Product"), {
             code: "FP-03",
@@ -187,7 +204,8 @@ const addDataProductFrappe = async () => {
             category: "frappe",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef4 = await addDoc(collection(db, "Product"), {
             code: "FP-04",
@@ -195,7 +213,8 @@ const addDataProductFrappe = async () => {
             category: "frappe",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Frappe thêm thành công với ID:", docRef1.id);
@@ -216,7 +235,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "FT-02",
@@ -224,7 +244,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef3 = await addDoc(collection(db, "Product"), {
             code: "FT-03",
@@ -232,7 +253,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef4 = await addDoc(collection(db, "Product"), {
             code: "FT-04",
@@ -240,7 +262,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef5 = await addDoc(collection(db, "Product"), {
             code: "FT-05",
@@ -248,7 +271,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef6 = await addDoc(collection(db, "Product"), {
             code: "FT-06",
@@ -256,7 +280,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef7 = await addDoc(collection(db, "Product"), {
             code: "FT-07",
@@ -264,7 +289,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef8 = await addDoc(collection(db, "Product"), {
             code: "FT-08",
@@ -272,7 +298,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef9 = await addDoc(collection(db, "Product"), {
             code: "FT-09",
@@ -280,7 +307,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef10 = await addDoc(collection(db, "Product"), {
             code: "FT-10",
@@ -288,7 +316,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef11 = await addDoc(collection(db, "Product"), {
             code: "FT-11",
@@ -296,7 +325,8 @@ const addDataProductFruitTea = async () => {
             category: "fruittea",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Thé au fruit thêm thành công với ID:", docRef1.id);
@@ -324,7 +354,8 @@ const addDataProductMatcha = async () => {
             category: "matcha",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "MC-02",
@@ -332,7 +363,8 @@ const addDataProductMatcha = async () => {
             category: "matcha",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef3 = await addDoc(collection(db, "Product"), {
             code: "MC-03",
@@ -340,7 +372,8 @@ const addDataProductMatcha = async () => {
             category: "matcha",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef4 = await addDoc(collection(db, "Product"), {
             code: "MC-04",
@@ -348,7 +381,8 @@ const addDataProductMatcha = async () => {
             category: "matcha",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef5 = await addDoc(collection(db, "Product"), {
             code: "MC-05",
@@ -356,7 +390,8 @@ const addDataProductMatcha = async () => {
             category: "matcha",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Matcha thêm thành công với ID:", docRef1.id);
@@ -378,7 +413,8 @@ const addDataProductSucreBrun = async () => {
             category: "brownsugar",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "SB-02",
@@ -386,7 +422,8 @@ const addDataProductSucreBrun = async () => {
             category: "brownsugar",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Sucre Brun thêm thành công với ID:", docRef1.id);
@@ -405,7 +442,8 @@ const addDataProductYaourt = async () => {
             category: "yogurt",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         const docRef2 = await addDoc(collection(db, "Product"), {
             code: "YO-02",
@@ -413,7 +451,8 @@ const addDataProductYaourt = async () => {
             category: "yogurt",
             priceM: 5.5, 
             priceL: 6.5,
-            quantitySold: 0
+            quantitySold: 0,
+            formula: "test1 test2"
         });
         
         console.log("Yaourt thêm thành công với ID:", docRef1.id);

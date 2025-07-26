@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-table-detail-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #263767;
+    height: 80vh;
+    margin-bottom: 5%;
+    position: relative;
+}
+
+.btn-return-detail-product {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    background-color: #ff0008;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: #ffffff solid 2px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-return-detail-product:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 2px;
+}
+
+.btn-return-detail-product:active {
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 3px;
+}
+
+.title-table-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+    margin-bottom: 2%;
+}
+
+.table-detail-product {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: start;
+    border: #ffffff solid 5px;
+    outline: #EC1C24 solid 3px;
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.panel-image-detail-product {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.image-detail-product {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.panel-text-detail-product {
+    font-size: 16px;
+    border: #ffffff solid 2px;
+    width: 100%;
+    height: calc(100% - 60px);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px 30px 30px 0px;
+    position: relative;
+}
+
+.name-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 3rem;
+    color: #EC1C24;
+    margin-bottom: 20px;
+}
+
+.category-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem; 
+    padding: 5px 20px; 
+    background-color: #293c73;
+    border-radius: 30px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.panel-size-detail-product {
+    display: flex;
+    padding: 20px 50px;
+}
+
+.price-M-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.5rem;
+    width: 30%;
+    position: relative;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+    border: #ffffff solid 3px;
+    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.price-M-detail-product::before {
+    content: "M";
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #EC1C24;
+    border: #ffffff solid 3px;
+    outline: #EC1C24 solid 2px;
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+}
+
+.price-L-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.5rem;
+    width: 30%;
+    position: relative;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4);
+    border: #ffffff solid 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.price-L-detail-product::before {
+    content: "L";
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #EC1C24;
+    border: #ffffff solid 3px;
+    outline: #EC1C24 solid 2px;
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+}
+
+.formula-detail-product {
+
+}
+
+.title-formula-detail-product {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.formula-detail-product > ul {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 100%;
+    background-color: #ffffff;
+    list-style-type: none;
+    padding: 20px;
+    border-radius: 10px;
+    outline: #EC1C24 solid 2px;
+}
+
+.formula-detail-product > ul > li {
+    font-family: "Lexend Deca", sans-serif;
+    font-size:  1.2rem;
+    margin-bottom: 5px;
+}
+
+.panel-btn-detail-product {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    padding: 0px 30px;
+}
+
+.btn-detail-product {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    background-color: #ff0008;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: #ffffff solid 2px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-detail-product:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 2px;
+}
+
+.btn-detail-product:active {
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 3px;
+}
