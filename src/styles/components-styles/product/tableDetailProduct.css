@@ -237,3 +237,162 @@
     box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
     outline: #ff0008 solid 3px;
 }
+
+/*** Form Edit Detail Product ***/
+
+.form-edit-detail-product {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    border: #ffffff solid 5px;
+    outline: #263767 solid 2px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+}
+
+.title-form-edit-detail-product {
+    color: #EC1C24;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.editing-info-product {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-name-product {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    align-items: center;
+    width: 100%;
+}
+
+.input-name-product > label {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.input-name-product > input {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 50px;
+    border: #EC1C24 solid 2px;
+    color: #263767;
+}
+
+.input-name-product > input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(38, 55, 103, 0.3);
+}
+
+.input-price-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.input-price-product > label {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.input-price-product > input {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50px;
+    border: #EC1C24 solid 2px;
+    color: #263767;
+}
+
+.input-price-product > input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(38, 55, 103, 0.3);
+}
+
+.input-formula-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.input-formula-product > label {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.input-formula-product > textarea {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: #EC1C24 solid 2px;
+    height: 15vh;
+    color: #263767;
+    resize: none;
+}
+
+.input-formula-product > input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(38, 55, 103, 0.3);
+}
+
+.input-formula-product {
+    height: 100%;
+}
+
+.panel-btn-edit-form-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 20px;
+    gap: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 10px 10%;
+}
+
+.btn-edit-form-product {
+    background-color: #ff0008;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: #ffffff solid 2px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-edit-form-product:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 2px;
+}
+
+.btn-edit-form-product:active {
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 3px;
+}

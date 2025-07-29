@@ -123,6 +123,7 @@ export default function CategorieProductStock () {
                         <thead>
                             <tr>
                                 <td>Code</td>
+                                <td>Type</td>
                                 <td>Name</td>
                                 <td>Supplier Name</td>
                                 <td>Remaining quantity</td>
@@ -132,6 +133,7 @@ export default function CategorieProductStock () {
                             {dataProductStockFilter.map((item) => (
                                 <tr key={item.id}>
                                     <td>{item.code}</td>
+                                    <td>{item.category}</td>
                                     <td>{item.name}</td>
                                     <td>{item.supplier}</td>
                                     <td>{item.quantity}</td>

@@ -163,7 +163,7 @@ export default function ChartPanel () {
                     <h2 className="title-chart-sale-revenue">Doanh thu theo tháng</h2>
                 </div>
                 <div className="shortcut-bussiness">
-                    <button className="btn-shortcut-bussiness">Chi tiết doanh thu</button>
+                    <a href="/Revenue" className="btn-shortcut-bussiness">Chi tiết doanh thu</a>
                 </div>
             </div>
         </>

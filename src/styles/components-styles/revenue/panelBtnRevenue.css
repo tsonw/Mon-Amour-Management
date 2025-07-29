@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-panel-btn-revenue {
+    padding: 50px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-revenue {
+    text-align: center;
+    text-decoration: none;
+    width: 90%;
+    transform: translate(0%, -50%);
+    background-color: #ff0008;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: #ffffff solid 2px;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-revenue:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 85%;
+    outline: #ff0008 solid 2px;
+}
+
+.btn-revenue:active {
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+    outline: #ff0008 solid 3px;
+}

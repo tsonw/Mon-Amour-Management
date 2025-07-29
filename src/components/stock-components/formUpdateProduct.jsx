@@ -45,7 +45,10 @@ export default function FormUpdateProduct () {
 
         let count = 0;
         for (const item of dataUpdate) {
-            if (item.update != 0) {
+            if (item.usage != 0) {
+                count++;
+            }
+            if (item.import != 0) {
                 count++;
             }
         }

@@ -45,6 +45,8 @@
 }
 
 .btn-shortcut-bussiness {
+    text-align: center;
+    text-decoration: none;
     background-color: #EC1C24;
     width: 30%;
     padding: 10px;

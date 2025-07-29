@@ -8,7 +8,7 @@ export default function TopSellersPanel () {
     return (
         <>
             <div className="main-topSellers-Panel">
-                <h1 className="title-topSellers-Panel">TOP SELLERS</h1>
+                <h1 className="title-topSellers-Panel">TOP 3 SELLERS</h1>
                 <div className="card-product-panel">
                     <CardProductSellers />
                 </div>

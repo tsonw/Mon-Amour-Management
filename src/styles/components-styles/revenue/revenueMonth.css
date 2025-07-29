@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-table-revenue-month {
+    color: #263767;
+    height: fit-content;
+}
+
+.title-table-revenue-month {
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 5%;
+}
+
+.table-revenue-month {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    padding: 30px 5%;
+    gap: 30px;
+}
+
+.chart-graphic-revenue-detail {
+    outline: #ff0008 solid 2px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 2px rgba(255, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-revenue-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-table-revenue-detail {
+    margin-bottom: 3%;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.table-revenue-detail > table {
+    width: 100%;
+    text-align: center;
+    border: #ff0008 solid 2px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.table-revenue-detail > table > thead > tr > td {
+    background-color: #ff0008;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 2% 10px;
+    border-radius: 5px;
+}
+
+.table-revenue-detail > table > tbody > tr > td {
+    background-color: rgb(255, 255, 255);
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 300;
+    color: #263767;
+    padding: 1% 10px;
+    border: #ff0008 solid 1px;
+    border-radius: 5px;
+}
+
+.table-label-revenue-detail {
+    text-align: left;
+}

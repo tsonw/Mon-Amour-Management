@@ -11,9 +11,9 @@ export default function HelloPanel () {
                     <p className="content-hello-panel">Trang web quản lý thông tin nội bộ trong cửa hàng dành riêng cho nhân viên quán</p>
                 </div>
                 <div className="shortcut-btn">
-                    <a href="/Home" className="item-shortcut-btn">Doanh số</a>
-                    <a href="/Home" className="item-shortcut-btn">Giờ làm</a>
-                    <a href="/Home" className="item-shortcut-btn">Quản lý kho</a>
+                    <a href="/Revenue" className="item-shortcut-btn">Doanh số</a>
+                    <a href="/Staff" className="item-shortcut-btn">Nhân viên</a>
+                    <a href="/Stock" className="item-shortcut-btn">Quản lý kho</a>
                 </div>
             </div>
         </>

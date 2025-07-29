@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-enter-daily-revenue {
+    color: #263767;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+.panel-title-enter-daily-revenue {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.title-enter-daily-revenue {
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.btn-return-enter-daily-revenue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ff0008;
+    color: #ffffff;
+    border: #ffffff solid 2px;
+    outline: #ff0008 solid 3px;
+    padding: 10px 20px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 10px 0px #263767;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-return-enter-daily-revenue:hover {
+    box-shadow: inset 0px 0px 10px 5px #ff0008;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-return-enter-daily-revenue:active {
+    transform: scale(0.98);
+}
+
+.form-enter-daily-revenue {
+    width: 90%;
+    outline: #ff0008 solid 2px;
+    border: #ffffff solid 2px;
+    margin-top: 2%;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.panel-input-info-daily-revenue {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+    gap: 20px;
+}
+
+.panel-input-info-daily-revenue > label {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+}
+
+.panel-input-info-daily-revenue > input {
+    font-family: "Lexend Deca", sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: #263767 solid 1px;
+    box-shadow: inset 0px 0px 10px rgba(38, 55, 103, 0.3);
+    background-color: #ffffff;
+}
+
+.table-enter-daily-revenue {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-enter-daily-revenue > table {
+    width: 90%;
+    text-align: center;
+}
+
+.table-enter-daily-revenue > table > thead > tr > td {
+    background-color: #ff0008;
+    padding: 10px 20px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    outline: #ff0008 solid 0.5px;
+}
+
+.table-enter-daily-revenue > table > tbody > tr > td {
+    background-color: #ffffff;
+    padding: 10px 10px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #263767;
+    font-weight: 300;
+    outline: #ff0008 solid 0.5px;
+}
+
+.name-table-enter-daily-revenue {
+    text-align: left;
+}
+
+.btn-panel-form-enter-daily-revenue {
+    padding: 30px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.btn-enter-daily-revenue {
+    background-color: #ff0008;
+    color: #ffffff;
+    border: #ffffff solid 2px;
+    outline: #ff0008 solid 3px;
+    padding: 10px 20px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 10px 0px #263767;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-enter-daily-revenue:hover {
+    outline: #ff0008 solid 5px;
+    box-shadow: inset 0px 0px 10px 5px #ff0008;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-enter-daily-revenue:active {
+    transform: scale(0.98);
+}

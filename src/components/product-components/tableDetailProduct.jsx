@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { query, collection, where, onSnapshot } from "firebase/firestore";
+import { query, collection, where, onSnapshot, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../scripts/get-document";
 
 import "../../styles/components-styles/product/tableDetailProduct.css";
@@ -126,7 +126,90 @@ export default function TableDetailProduct ({code}) {
         return () => unsub();
     },[]);
 
+    // Lấy thông tin sản phẩm
     const formula = dataProduct[0]?.formula;
+    const name = dataProduct[0]?.name;
+    const id = dataProduct[0]?.id;
+    const priceL = dataProduct[0]?.priceL;
+
+    // Biến bool để xác định edit
+    // False vì ban đầu không hiển thị
+    const [isEditing, setIsEditing] = useState(false);
+
+    // Hàm gán vào button edit
+    const clickToEdit = () => {
+        setIsEditing(true);
+    }
+
+    // Hàm gán vào button edit
+    const clickToReturnPanelInfo = () => {
+        setIsEditing(false);
+    }
+    // Hàm gán vào button edit
+    const clickToClear = () => {
+        document.getElementById("input-name-product").value = "";
+        document.getElementById("input-priceM-product").value = "";
+        document.getElementById("input-priceL-product").value = "";
+        document.getElementById("input-formula-product").value = "";
+    }
+
+    // Hàm gán vào button edit
+    const clickToDone = async () => {
+
+        // Lấy giá trị từ các input
+        const inputName = document.getElementById("input-name-product").value;
+        const inputPriceM = document.getElementById("input-priceM-product").value;
+        const inputPriceL = document.getElementById("input-priceL-product").value;
+        const inputFormula = document.getElementById("input-formula-product").value;
+
+        // Kiểm tra cách nhập của formula để tránh gây sai trong DataBase
+        const pattern = /^([^\s:]+ *: *\d+\s*[a-zA-Z]+)(\.[^\s:]+ *: *\d+\s*[a-zA-Z]+)*$/;
+        const isValidFormula = pattern.test(inputFormula);
+
+        // Các trường còn lại không được để trống
+        const isValidName = inputPriceM != "";
+        const isValidPriceM = inputPriceM != "";
+        const isValidPriceL = inputPriceL != "";
+
+        // Update vào trong DataBase
+        const productRef = doc(db, "Product", id);
+        const updateData = {
+            name: inputName,
+            priceM: inputPriceM,
+            formula: inputFormula
+        };
+        
+        // Nếu inputPriceL không rỗng hoặc null thì add vô object update
+        if (inputPriceL !== null && inputPriceL !== undefined) {
+            updateData.priceL = inputPriceL;
+        }
+
+        if (isValidFormula && isValidName && isValidPriceM) {
+            if (window.confirm(`Xác nhận thay đổi thông tin của sản phẩm ${name}`)) {
+
+                try {
+                    await updateDoc(productRef, updateData);
+                    setIsEditing(false);
+                    window.alert("Cập nhật thành công!");
+                } catch (error) {
+                    console.error("Lỗi cập nhật:", error);
+                    window.alert("Cập nhật thất bại, thử lại nhé!");
+                }
+
+                setIsEditing(false);
+            }
+        } else {
+            if (!isValidName) {
+                window.alert("Không được để trống Name !!!");
+            } else if (!isValidPriceM) {
+                window.alert("Không được để trống Price M !!!");
+            } else if (priceL !== "") {
+                window.alert("Không được để trống Price L !!!");
+            } else {
+                window.alert("Hãy nhập theo yêu cầu. Ví dụ : siro : 10ml.nước : 20ml");
+            }
+        }
+    }
 
     return (
         <>
@@ -148,14 +231,47 @@ export default function TableDetailProduct ({code}) {
                             <div className="formula-detail-product">
                                 <h5 className="title-formula-detail-product">Công thức :</h5>
                                 <ul>
-                                    {formula.split(' ').map((item, idx) => (
+                                    {formula.split('.').map((item, idx) => (
                                         <li key={idx}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="panel-btn-detail-product">
-                                <button className="btn-detail-product">Edit</button>
+                                <button className="btn-detail-product" onClick={clickToEdit}>Edit</button>
                             </div>
+                            {isEditing && (
+                                <div className="form-edit-detail-product">
+                                    <h2 className="title-form-edit-detail-product">Edit product information</h2>
+                                    <div className="editing-info-product">
+                                        <div className="input-name-product">
+                                            <label htmlFor="name">Name :</label>
+                                            <input id="input-name-product" type="text" placeholder="Nhập đi nè" />
+                                        </div>
+                                        <div className="input-price-product">
+                                            <label htmlFor="name">Price - M :</label>
+                                            <input id="input-priceM-product" type="number" placeholder="Nhập đi nè" />
+                                            {item.priceL && 
+                                                <>
+                                                    <label htmlFor="name">Price - L :</label>
+                                                    <input id="input-priceL-product" type="number" placeholder="Nhập đi nè" />
+                                                </>
+                                            }
+                                        </div>
+                                        <div className="input-formula-product">
+                                            <label htmlFor="name">Formula <i>- Cách nhau bằng dấu "."</i></label>
+                                            <textarea
+                                                placeholder="Ví dụ : siro : 10ml.nước : 20ml"
+                                                id="input-formula-product"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="panel-btn-edit-form-product">
+                                        <button className="btn-edit-form-product" onClick={clickToReturnPanelInfo}>Return</button>
+                                        <button className="btn-edit-form-product" onClick={clickToClear}>Clear</button>
+                                        <button className="btn-edit-form-product" onClick={clickToDone}>Confirm</button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}

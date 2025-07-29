@@ -12,6 +12,9 @@ import UpdateProduct from './pages/Subpage-stock/UpdateProduct'
 import HistoryUpdate from './pages/Subpage-stock/HistoryUpdate'
 import Product from './pages/Product'
 import DetailProduct from './pages/Subpage-product/DetailProduct'
+import Revenue from './pages/Revenue'
+import EnterDailyRevenue from './pages/Subpage-revenue/EnterDailyRevenu'
+import HistoryRevenueMonth from './pages/Subpage-revenue/HistoryRevenueMonth'
 
 export default function App() {
   return (
@@ -74,6 +77,30 @@ export default function App() {
           element={
             <PrivateRoute>
               <Staff />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/revenue"
+          element={
+            <PrivateRoute>
+              <Revenue />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/revenue/EnterDailyRevenue"
+          element={
+            <PrivateRoute>
+              <EnterDailyRevenue />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/revenue/HistoryMonthRevenue"
+          element={
+            <PrivateRoute>
+              <HistoryRevenueMonth />
             </PrivateRoute>
           }
         />
