@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
+import HistoryTableRevenue from "../../components/revenue-components/historyTableRevenue";
 
 export default function HistoryRevenueMonth () {
 
@@ -10,7 +11,7 @@ export default function HistoryRevenueMonth () {
         <>
             <div id="EnterDailyRevenue">                
                 <Navigation />
-
+                <HistoryTableRevenue />
                 <Footer />
             </div>
         </>

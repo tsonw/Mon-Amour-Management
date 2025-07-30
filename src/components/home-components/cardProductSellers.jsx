@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/components-styles/home/cardProductSellers.css";
 import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
 import { db } from '../../scripts/get-document'; 
+import { ListProductImage } from "../product-components/listProduct";
 
 export default function CardProductSellers () {
 
@@ -13,8 +14,8 @@ export default function CardProductSellers () {
     useEffect(() => {
         const fetchData = async () => {
             const q = query(
-                collection(db, "Stastiques"), 
-                orderBy("quantite", "desc"),
+                collection(db, "Product"), 
+                orderBy("quantitySold", "desc"),
                 limit(3)
             ); 
             const querySnapshot = await getDocs(q);
@@ -32,11 +33,11 @@ export default function CardProductSellers () {
             <div className="main-card-product-sellers">
                 {data.map((item) => (
                     <div key={item.id} className="card-product-sellers">
-                        <img src={img} className="img-product-sellers" alt="image product" draggable="false" />
+                        <img src={ListProductImage[item.name]} className="img-product-sellers" alt="image product" draggable="false" />
                         <div className="descript-card-product-sellers">
                             <h2 className="name-product-sellers">{item.name}</h2>
                             <p className="price-product-sellers">Giá : <br />Size M - <strong>{item.priceM} €</strong><br />Size L - <strong>{item.priceL} €</strong></p>
-                            <p className="quantite-product-sellers">Số lượng : <strong>{item.quantite}</strong></p>
+                            <p className="quantite-product-sellers">Số lượng : <strong>{item.quantitySold}</strong></p>
                         </div>
                     </div>
                 ))}

@@ -86,8 +86,6 @@ export default function RevenueWeek () {
         return () => unsub();
     },[]);
 
-    console.log("🔥 Doanh thu 7 ngày gần nhất:", dataRevenue7DaysAgo);
-
     const dateToString = (input) => {
         const dateObj = input instanceof Date ? input : input.toDate?.() || new Date(input);
         const day = String(dateObj.getDate()).padStart(2, "0");

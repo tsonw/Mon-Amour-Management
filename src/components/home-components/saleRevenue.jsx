@@ -6,14 +6,6 @@ import ChartPanel from "./chartPanel";
 
 export default function SaleRevenue () {
 
-    const handleClick = async () => {
-        const cash = document.getElementById("getData").value;
-        const ref = doc(db, "RevenueWeek", "1");
-        await updateDoc(ref, {
-            Cash: cash
-        });
-    };
-
     return (
         <>
             <div className="main-sale-revenue-Panel">

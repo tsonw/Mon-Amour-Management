@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+.main-history-table-revenue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.panel-text-history-table-revenue {
+
+}
+
+.title-history-table-revenue {
+    font-family: "Lexend Deca", sans-serif;
+    margin-bottom: 5%;
+}
+
+.panel-content-history-table-revenue {
+    width: 90%;
+}
+
+.research-date-history-table-revenue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.research-date-history-table-revenue > label {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+}
+
+.research-date-history-table-revenue > input {
+    font-family: "Lexend Deca", sans-serif;
+    width: 20%;
+    text-align: center;
+    font-weight: 500;
+    outline: none;
+    border-radius: 20px;
+    border: #ff0008 solid 2px;
+    padding: 5px;
+}
+
+.research-date-history-table-revenue > button {
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    font-weight: 500;
+    outline: none;
+    border-radius: 20px;
+    border: #ffffff solid 2px;
+    padding: 5px 20px;
+    background-color: #ff0008;
+    color: #ffffff;
+    outline: #ff0008 solid 2px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.research-date-history-table-revenue > button:hover {
+    box-shadow: inset 0px 0px 10px #8b0409;
+}
+
+.research-date-history-table-revenue > button:active {
+    transform: scale(0.95);
+}
+
+.table-history-revenue {
+    width: 100%;
+    outline: #ff0008 solid 2px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.table-history-revenue > table {
+    width: 100%;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.table-history-revenue > table > thead > tr > td {
+    background-color: #ff0008;
+    outline: #8b0409 solid 1px;
+    color: #ffffff;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    padding: 5px 10px;
+    box-shadow: inset 0px 0px 10px 2px #8b0409;
+}
+
+.table-history-revenue > table > tbody > tr > td {
+    outline: #8b0409 solid 1px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 300;
+    padding: 5px 10px;
+    background-color: #ffffff8b;
+}

@@ -23,7 +23,7 @@
     width: 80%;
 }
 
-.table-work-time thead {
+.table-work-time > thead > tr > th {
     background-color: #EC1C24;
     color: #ffffff;
 }

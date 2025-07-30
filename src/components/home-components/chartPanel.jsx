@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/components-styles/home/chartPanel.css";
-import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, limit, orderBy, onSnapshot } from 'firebase/firestore';
 import { db } from '../../scripts/get-document'; 
 import {
     Chart as ChartJS,
@@ -27,39 +27,38 @@ ChartJS.register(
 
 export default function ChartPanel () {
 
-    const [dataWeek, setDataWeek] = useState([]);
-    const [dataMonth, setdataMonth] = useState([]);
+    // Data doanh thu theo tháng
+    const [dataProduct, setDataProduct] = useState([]);
     
-    // Lấy dữ liệu từ Firestore (Chart)
+    // Lấy dự liêu ban đầu
+    // Tự cập nhật lại dự liệu khi phát hiện thay đổi
     useEffect(() => {
-        const fetchData = async () => {
-            const qW = query(
-                collection(db, "RevenueWeek")
-            );
-            const qM = query(
-                collection(db, "RevenueMonth"),
-                orderBy("idM", "asc")
-            );
-            
-            const querySnapshotW = await getDocs(qW);
-            const querySnapshotM = await getDocs(qM);
+        const today = new Date();
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(today.getDate() - 7);
 
-            const chartWeek = querySnapshotW.docs.map(doc => ({
-                id: doc.id,
+        const q = query(
+            collection(db, "Product"),
+            orderBy("code", "asc")
+        );
+
+        const unsub = onSnapshot(q, (snapshot) => {
+            const updatedData = snapshot.docs.map(doc => ({
                 ...doc.data()
-            }));
-            const chartMonth = querySnapshotM.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
+            }))
+            setDataProduct(updatedData);
+        })
 
-            setDataWeek(chartWeek);
-            setdataMonth(chartMonth);
-        };
-        fetchData();
-    }, []);
+        return () => unsub();
+    },[]);
 
-    console.log(dataMonth);
+    const dateToString = (input) => {
+        const dateObj = input instanceof Date ? input : input.toDate?.() || new Date(input);
+        const day = String(dateObj.getDate()).padStart(2, "0");
+        const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+        const year = dateObj.getFullYear();
+        return `${day} - ${month} - ${year}`;
+    };
 
     return (
         <>
@@ -68,17 +67,17 @@ export default function ChartPanel () {
                     <div className="chart-graphic">
                         <Line
                             data={{
-                                labels: dataWeek.map((data) => data.Label),
+                                labels: dataProduct.map((data) => data.name),
                                 datasets: [
                                     {
                                         label: "Compte",
-                                        data: dataWeek.map((data) => data.Compte),
+                                        data: dataProduct.map((data) => data.quantitySoldM),
                                         backgroundColor: "#263767",
                                         borderColor: "#1f618dff",
                                     },
                                     {
                                         label: "Cash",
-                                        data: dataWeek.map((data) => data.Cash),
+                                        data: dataProduct.map((data) => data.quantitySoldL),
                                         backgroundColor: "#EC1C24",
                                         borderColor: "#ff4000ff",
                                     },
@@ -92,11 +91,16 @@ export default function ChartPanel () {
                                     },
                                 },
                                 plugins: {
-                                    legend: {
+                                    title: {
                                         display: true,
-                                        position: 'bottom',
-                                        padding: 20,
-                                        boxWidth: 50,
+                                        text: "Biểu đồ doanh thu theo sản phẩm Mon Amour",
+                                        font: {
+                                            size: 20,
+                                            family: "Lexend Deca",
+                                        }
+                                    },
+                                    legend: {
+                                        position: 'bottom'
                                     }
                                 },
                                 animations: {
@@ -111,56 +115,6 @@ export default function ChartPanel () {
                             }}
                         />
                     </div>
-                    <h2 className="title-chart-sale-revenue">Doanh thu theo tuần</h2>
-                </div>
-                <div className="chart-panel">
-                    <div className="chart-graphic">
-                        <Line
-                            data={{
-                                labels: dataMonth.map((data) => data.Label),
-                                datasets: [
-                                    {
-                                        label: "Compte",
-                                        data: dataMonth.map((data) => data.Compte),
-                                        backgroundColor: "#263767",
-                                        borderColor: "#1f618dff",
-                                    },
-                                    {
-                                        label: "Cash",
-                                        data: dataMonth.map((data) => data.Cash),
-                                        backgroundColor: "#EC1C24",
-                                        borderColor: "#ff4000ff",
-                                    },
-                                ],
-                            }}
-                            options={{
-                                maintainAspectRatio: false,
-                                elements: {
-                                    line: {
-                                        tension: 0.5,
-                                    },
-                                },
-                                plugins: {
-                                    legend: {
-                                        display: true,
-                                        position: 'bottom',
-                                        padding: 20,
-                                        boxWidth: 50,
-                                    }
-                                },
-                                animations: {
-                                    tension: {
-                                        duration: 1000,
-                                        easing: 'ease-out',
-                                        from: 0.5,
-                                        to: 0.2,
-                                        loop: true
-                                    }
-                                }
-                            }}
-                        />
-                    </div>
-                    <h2 className="title-chart-sale-revenue">Doanh thu theo tháng</h2>
                 </div>
                 <div className="shortcut-bussiness">
                     <a href="/Revenue" className="btn-shortcut-bussiness">Chi tiết doanh thu</a>

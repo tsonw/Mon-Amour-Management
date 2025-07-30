@@ -39,3 +39,7 @@
     font-weight: 600;
     padding: 10px 10px 10px 5%;
 }
+
+.copyright-footer > p {
+    color: #ffffff;
+}

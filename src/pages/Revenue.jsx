@@ -6,6 +6,7 @@ import "../styles/pages-styles/Revenue.css";
 import RevenueMonth from "../components/revenue-components/revenueMonth";
 import RevenueWeek from "../components/revenue-components/revenueWeek";
 import PanelBtnRevenue from "../components/revenue-components/panelBtnRevenue";
+import RevenueByProduct from "../components/revenue-components/revenueByProduct";
 
 export default function Revenue () {
 
@@ -15,8 +16,9 @@ export default function Revenue () {
         <>
             <div id="Revenue">
                 <Navigation />
-                <RevenueMonth />
                 <RevenueWeek />
+                <RevenueMonth />
+                <RevenueByProduct />
                 <PanelBtnRevenue />
                 <Footer />
             </div>

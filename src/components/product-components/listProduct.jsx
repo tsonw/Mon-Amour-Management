@@ -57,7 +57,7 @@ import BrunSugar from "../../assets/ImageProduct/brunsugar/normal.jpg";
 import YaourtMixe from "../../assets/ImageProduct/suachua/mixe.jpg";
 import YaourtTapioca from "../../assets/ImageProduct/suachua/tapioca.jpg";
 
-const ListProductImage = {
+export const ListProductImage = {
     // Cafe
     "Café au lait": CafeAuLait,
     "Café au fromage": CafePhomai,
@@ -146,7 +146,6 @@ export default function ListProduct () {
             ...doc.data()
         }));
         setDataProductFilter(dataFilter);
-        console.log(dataProductFilter)
     };
 
     // Hàm tìm theo type của sản phẩm trong ComboBox

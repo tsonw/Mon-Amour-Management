@@ -222,24 +222,6 @@ export default function FormEnterDailyRevenue () {
                     }
                 }
 
-                // Hàm cho phép thêm thông tin vào trong nhật ký
-                const addDataHistoryUpdateRevenue = async (userEmail) => {
-                
-                    // Thêm dữ liệu vào DataBase
-                    try {
-                        const docRef = await addDoc(collection(db, "HistoryEnterRevenue"), {
-                            userEmail: userEmail,
-                            dateRevenue: inputDayObject,
-                            dateEnter: today,
-                            raison: ""
-                        });
-                    } catch (error) {
-                        console.error(error);
-                    }
-                }
-                // Lưu vào nhật ký thay đổi
-                addDataHistoryUpdateRevenue(user.email);
-                
                 // Tính doanh thu tổng cả ngày
                 revenueTotalDay = revenueTotalSizeMDay + revenueTotalSizeLDay;
 

@@ -135,8 +135,6 @@ export default function RevenueMonth () {
         return () => unsub();
     },[]);
 
-    console.log("🔥 Doanh thu 6 tháng gần nhất:", dataRevenue6MonthsAgo);
-
     return (
         <>
             <div className="main-table-revenue-month">
