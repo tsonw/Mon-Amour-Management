@@ -18,6 +18,7 @@
     align-items: center;
     padding: 10px;
     margin: 10px;
+    height: 60px;
     animation: navi-animation 0.3s forwards ease-out;
     position: fixed;
     top: 0;

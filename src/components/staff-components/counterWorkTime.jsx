@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { query, collection,  orderBy, limit, getDocs, onSnapshot } from "firebase/firestore";
+import { query, collection,  orderBy, limit, getDocs, onSnapshot, doc } from "firebase/firestore";
 import { db } from "../../scripts/get-document";
 
 import "../../styles/components-styles/staff/counterWorkTime.css";
@@ -57,23 +57,26 @@ export default function CounterWorkTime () {
         };
     }, []);
 
-    // Hàm tính toán thời gian làm việc của nhân viên
-    function calculTimeWorking (timeStart, timeEnd, nameStaff) {
-        const dateS = new Date(timeStart);
-        const hoursS = dateS.getHours() + dateS.getMinutes() / 60;
+    // Hàm tính giờ làm theo tháng
+    const calculTimeWorkingByMonth = (timeStart, timeEnd, nameStaff, month) => {
         
+        const dateS = new Date(timeStart);
         const dateE = new Date(timeEnd);
-        const hoursE = dateE.getHours() + dateE.getMinutes() / 60;
 
-        const timeCalcul = hoursE - hoursS;
+        if (dateS.getMonth() + 1 == month) {
+            const hoursS = dateS.getHours() + dateS.getMinutes() / 60;
+            const hoursE = dateE.getHours() + dateE.getMinutes() / 60;
+            const timeCalcul = hoursE - hoursS;
 
-        if (nameStaff === "Tony") {
-            setWorkTimeTony(prev => prev + timeCalcul)
-        } else if (nameStaff === "Luxy") {
-            setWorkTimeLuxy(prev => prev + timeCalcul)
-        } else if (nameStaff === "Lily") {
-            setWorkTimeLily(prev => prev + timeCalcul)
+            if (nameStaff === "Tony") {
+                setWorkTimeTony(prev => prev + timeCalcul)
+            } else if (nameStaff === "Luxy") {
+                setWorkTimeLuxy(prev => prev + timeCalcul)
+            } else if (nameStaff === "Lily") {
+                setWorkTimeLily(prev => prev + timeCalcul)
+            }
         }
+        
     }
 
     // Tính giờ làm của nhân viên
@@ -82,15 +85,47 @@ export default function CounterWorkTime () {
         setWorkTimeLuxy(0);
         setWorkTimeLily(0);
         dataWTS.forEach((item) => {
-            calculTimeWorking(item.start, item.end, item.title);
+            calculTimeWorkingByMonth(item.start, item.end, item.title, currentMonth);
         });
     }, [dataWTS]);
+
+
+    const handleSearchBtnWorkTime = () => {
+
+        // Lấy tháng trong input month
+        const inputMonthValue = document.getElementById("input-search-work-time-by-month").value;
+
+        setWorkTimeTony(0);
+        setWorkTimeLuxy(0);
+        setWorkTimeLily(0);
+        dataWTS.forEach((item) => {
+            calculTimeWorkingByMonth(item.start, item.end, item.title, inputMonthValue)
+        });
+
+        console.log(dataWTS)
+        console.log("Input : " + inputMonthValue)
+    }
 
     return (
         <>
             <div className="main-counter-work-time">
                 <div className="counter-work-time-panel">
-                    <h1 className="title-counter-work-time">Thời gian làm việc trong tháng {currentMonth} của nhân viên Mon Amour</h1>
+                    <h1 className="title-counter-work-time">Thời gian làm việc của nhân viên Mon Amour</h1>
+                    <div className="input-search-by-month">
+                        <form onSubmit={handleSearchBtnWorkTime}>
+                            <label htmlFor="month">Tháng :</label>
+                            <input 
+                                type="number" 
+                                min="1" 
+                                max="12" 
+                                step="1" 
+                                id="input-search-work-time-by-month" 
+                                placeholder={currentMonth}
+                                required
+                            />
+                            <button type="submit" id="btn-search-work-time-by-month">Search</button>
+                        </form>
+                    </div>
                     <table className="table-work-time">
                         <thead>
                             <tr>
