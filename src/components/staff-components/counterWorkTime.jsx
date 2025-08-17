@@ -9,6 +9,7 @@ export default function CounterWorkTime () {
 
     const today = new Date();
     const currentMonth = today.getMonth() + 1;
+    const currentYear = today.getFullYear();
     
     // Data WorktimeStaff
     const [dataWTS, setDataWTS] = useState([]);
@@ -58,12 +59,12 @@ export default function CounterWorkTime () {
     }, []);
 
     // Hàm tính giờ làm theo tháng
-    const calculTimeWorkingByMonth = (timeStart, timeEnd, nameStaff, month) => {
+    const calculTimeWorkingByMonth = (timeStart, timeEnd, nameStaff, month, year) => {
         
         const dateS = new Date(timeStart);
         const dateE = new Date(timeEnd);
 
-        if (dateS.getMonth() + 1 == month) {
+        if (dateS.getMonth() + 1 == month ) {
             const hoursS = dateS.getHours() + dateS.getMinutes() / 60;
             const hoursE = dateE.getHours() + dateE.getMinutes() / 60;
             const timeCalcul = hoursE - hoursS;
@@ -89,22 +90,20 @@ export default function CounterWorkTime () {
         });
     }, [dataWTS]);
 
-
-    const handleSearchBtnWorkTime = () => {
-
+    const handleChangeInputWorkTime = () => {
+        
         // Lấy tháng trong input month
         const inputMonthValue = document.getElementById("input-search-work-time-by-month").value;
 
         setWorkTimeTony(0);
         setWorkTimeLuxy(0);
         setWorkTimeLily(0);
+
         dataWTS.forEach((item) => {
             calculTimeWorkingByMonth(item.start, item.end, item.title, inputMonthValue)
         });
 
-        console.log(dataWTS)
-        console.log("Input : " + inputMonthValue)
-    }
+    };
 
     return (
         <>
@@ -112,7 +111,7 @@ export default function CounterWorkTime () {
                 <div className="counter-work-time-panel">
                     <h1 className="title-counter-work-time">Thời gian làm việc của nhân viên Mon Amour</h1>
                     <div className="input-search-by-month">
-                        <form onSubmit={handleSearchBtnWorkTime}>
+                        <form>
                             <label htmlFor="month">Tháng :</label>
                             <input 
                                 type="number" 
@@ -120,10 +119,20 @@ export default function CounterWorkTime () {
                                 max="12" 
                                 step="1" 
                                 id="input-search-work-time-by-month" 
-                                placeholder={currentMonth}
+                                onChange={handleChangeInputWorkTime}
+                                value={currentMonth}
                                 required
                             />
-                            <button type="submit" id="btn-search-work-time-by-month">Search</button>
+                            <input 
+                                type="number" 
+                                min="0" 
+                                max="9999" 
+                                step="1" 
+                                id="input-search-work-time-by-month" 
+                                onChange={handleChangeInputWorkTime}
+                                value={currentYear}
+                                required
+                            />
                         </form>
                     </div>
                     <table className="table-work-time">
