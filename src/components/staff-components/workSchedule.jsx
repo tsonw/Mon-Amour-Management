@@ -52,8 +52,10 @@ export default function WorkSchedule () {
 
     const listColorStaff = {
         Tony: "#FFB82B",
-        Luxy: "#EB4886",
-        Lily: "#7ACBBE"
+        Lucy: "#EB4886",
+        Lily: "#7ACBBE",
+        Trang: "#8e7acbff",
+        Huyen: "#cb7abfff"
     };
 
     const handleConfirm = async (event, action) => {

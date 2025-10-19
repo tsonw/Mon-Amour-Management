@@ -8,8 +8,8 @@ import "../../styles/components-styles/staff/counterWorkTime.css";
 export default function CounterWorkTime () {
 
     const today = new Date();
-    const currentMonth = today.getMonth() + 1;
-    const currentYear = today.getFullYear();
+    const [currentMonth, setCurrentMonth] = useState(today.getMonth() + 1);
+    const [currentYear, setCurrentYear] = useState(today.getFullYear());
     
     // Data WorktimeStaff
     const [dataWTS, setDataWTS] = useState([]);
@@ -20,11 +20,15 @@ export default function CounterWorkTime () {
     const [workTimeTony, setWorkTimeTony] = useState(0);
     const [workTimeLuxy, setWorkTimeLuxy] = useState(0);
     const [workTimeLily, setWorkTimeLily] = useState(0);
+    const [workTimeTrang, setWorkTimeTrang] = useState(0);
+    const [workTimeHuyen, setWorkTimeHuyen] = useState(0);
 
     const listWorkTime = {
         Tony: workTimeTony,
-        Luxy: workTimeLuxy,
-        Lily: workTimeLily
+        Lucy: workTimeLuxy,
+        Lily: workTimeLily,
+        Trang: workTimeTrang,
+        Huyen: workTimeHuyen
     }
 
     // Thay đổi data khi DB thay đổi  
@@ -68,16 +72,25 @@ export default function CounterWorkTime () {
             const hoursS = dateS.getHours() + dateS.getMinutes() / 60;
             const hoursE = dateE.getHours() + dateE.getMinutes() / 60;
             const timeCalcul = hoursE - hoursS;
-
-            if (nameStaff === "Tony") {
-                setWorkTimeTony(prev => prev + timeCalcul)
-            } else if (nameStaff === "Luxy") {
-                setWorkTimeLuxy(prev => prev + timeCalcul)
-            } else if (nameStaff === "Lily") {
-                setWorkTimeLily(prev => prev + timeCalcul)
+            
+            switch (nameStaff) {
+                case "Tony":
+                    setWorkTimeTony(prev => prev + timeCalcul)
+                    break;
+                case "Lucy":
+                    setWorkTimeLuxy(prev => prev + timeCalcul)
+                    break;
+                case "Lily":
+                    setWorkTimeLily(prev => prev + timeCalcul)
+                    break;
+                case "Trang":
+                    setWorkTimeTrang(prev => prev + timeCalcul)
+                    break;
+                case "Huyen":
+                    setWorkTimeHuyen(prev => prev + timeCalcul)
+                    break;
             }
         }
-        
     }
 
     // Tính giờ làm của nhân viên
@@ -85,6 +98,9 @@ export default function CounterWorkTime () {
         setWorkTimeTony(0);
         setWorkTimeLuxy(0);
         setWorkTimeLily(0);
+        setWorkTimeTrang(0);
+        setWorkTimeHuyen(0);
+
         dataWTS.forEach((item) => {
             calculTimeWorkingByMonth(item.start, item.end, item.title, currentMonth);
         });
@@ -98,7 +114,9 @@ export default function CounterWorkTime () {
         setWorkTimeTony(0);
         setWorkTimeLuxy(0);
         setWorkTimeLily(0);
-
+        setWorkTimeTrang(0);
+        setWorkTimeHuyen(0);
+        
         dataWTS.forEach((item) => {
             calculTimeWorkingByMonth(item.start, item.end, item.title, inputMonthValue)
         });
@@ -120,7 +138,6 @@ export default function CounterWorkTime () {
                                 step="1" 
                                 id="input-search-work-time-by-month" 
                                 onChange={handleChangeInputWorkTime}
-                                value={currentMonth}
                                 required
                             />
                             <input 

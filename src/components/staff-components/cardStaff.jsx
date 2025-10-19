@@ -6,10 +6,12 @@ import "../../styles/components-styles/staff/cardStaff.css";
 import iconMA from "../../assets/iconMA.png";
 import avtTony from "../../assets/profile-avatar-tony.jpg";
 import avtLily from "../../assets/profile-avatar-lily.jpg";
+import avtLucy from "../../assets/profile-avatar-lucy.png";
 
 const avatarMap = {
     Tony: avtTony,
-    Lily: avtLily
+    Lily: avtLily,
+    Lucy: avtLucy
 };
 
 
