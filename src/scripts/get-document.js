@@ -10,6 +10,9 @@ const db = getFirestore(app);
 
 export { db };
 
+// API GGSheet INVENTORY
+// https://sheets.googleapis.com/v4/spreadsheets/13Y_NqMix2uRCmQgRK8oilgzkTMVj0OD34b9PHlhW9iU/values/MONAMOUR!A1:I44?key=AIzaSyD1B5k5XHVh4gESIbdL5dIddl2AKur90uc
+
 // Form mẫu trích xuất dữ liệu từ Firestore
 /*
     const docRef = doc(db, "produit", "siro");

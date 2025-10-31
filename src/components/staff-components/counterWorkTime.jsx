@@ -76,18 +76,23 @@ export default function CounterWorkTime () {
             switch (nameStaff) {
                 case "Tony":
                     setWorkTimeTony(prev => prev + timeCalcul)
+                    setWorkTimeTony(prev => Math.round(prev * 100) / 100)
                     break;
                 case "Lucy":
                     setWorkTimeLuxy(prev => prev + timeCalcul)
+                    setWorkTimeLuxy(prev => Math.round(prev * 100) / 100)
                     break;
                 case "Lily":
                     setWorkTimeLily(prev => prev + timeCalcul)
+                    setWorkTimeLily(prev => Math.round(prev * 100) / 100)
                     break;
                 case "Trang":
                     setWorkTimeTrang(prev => prev + timeCalcul)
+                    setWorkTimeTrang(prev => Math.round(prev * 100) / 100)
                     break;
                 case "Huyen":
                     setWorkTimeHuyen(prev => prev + timeCalcul)
+                    setWorkTimeHuyen(prev => Math.round(prev * 100) / 100)
                     break;
             }
         }
@@ -121,6 +126,8 @@ export default function CounterWorkTime () {
             calculTimeWorkingByMonth(item.start, item.end, item.title, inputMonthValue)
         });
 
+
+
     };
 
     return (
@@ -138,6 +145,7 @@ export default function CounterWorkTime () {
                                 step="1" 
                                 id="input-search-work-time-by-month" 
                                 onChange={handleChangeInputWorkTime}
+                                placeholder={currentMonth}
                                 required
                             />
                             <input 
@@ -147,7 +155,7 @@ export default function CounterWorkTime () {
                                 step="1" 
                                 id="input-search-work-time-by-month" 
                                 onChange={handleChangeInputWorkTime}
-                                value={currentYear}
+                                placeholder={currentYear}
                                 required
                             />
                         </form>
@@ -158,6 +166,7 @@ export default function CounterWorkTime () {
                                 <th>Tên nhân viên</th>
                                 <th>Nickname</th>
                                 <th>Tổng giờ làm trong tháng {currentMonth}</th>
+                                <th>Thành tiền</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -166,6 +175,7 @@ export default function CounterWorkTime () {
                                     <td>{item.Name}</td>
                                     <td>{item.Nickname}</td>
                                     <td>{listWorkTime[item.Nickname]}</td>
+                                    <td>{Math.round((listWorkTime[item.Nickname] * 9.27) * 100) / 100} €</td>
                                 </tr>
                             ))}
                         </tbody>
