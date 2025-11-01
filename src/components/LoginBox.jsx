@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { mySignInWithEmailAndPassword } from '../scripts/auth-signin.js';
 
-import backgroundLogin from "../assets/background_Login.jpg"
+import backgroundLogin from "../assets/img_Login.jpg"
 
 export default function LoginBox() {
     const navigate = useNavigate();

@@ -30,6 +30,15 @@
     width: 100%;
 }
 
+@keyframes login-form-animation {
+    0% {
+        width: 0px;
+    }
+    90% {
+        width: 60%;
+    }
+}
+
 .login-form {
     position: relative;
     z-index: 2;
@@ -43,6 +52,26 @@
     gap: 40px;
     width: 60%;
     height: 70%;
+    animation: 1s login-form-animation 0s forwards;
+}
+
+@keyframes login-form-enter-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .enter-zone-login {
@@ -50,6 +79,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: 1s login-form-enter-animation 0s forwards;
 }
 
 .enter-zone-login > img {
@@ -168,5 +198,4 @@
 
 .image-zone-login > img {
     height: 100%;
-    transform: translateX(-30%);
 }

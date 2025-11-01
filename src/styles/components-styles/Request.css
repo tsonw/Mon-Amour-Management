@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
 }
 
 .request {
@@ -17,129 +18,202 @@
     color: #333;
     height: 100vh;
     width: 100%;
+    position: relative;
 }
 
-.request > form {
+.request::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes request-form-animation {
+    0% {
+        width: 0px;
+    }
+    90% {
+        width: 60%;
+    }
+}
+
+.request-form {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    gap: 40px;
+    width: 60%;
+    height: 70%;
+    animation: 1s login-form-animation 0s forwards;
+}
+
+@keyframes login-form-enter-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.enter-zone-request {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40%;
-    height: fit-content;
-    border-radius: 25px;
-    background-color: #ffffffae;
-    border: #ffffff 3px solid;
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.8);
+    animation: 1s login-form-enter-animation 0s forwards;
 }
 
-.request > form > img {
+.enter-zone-request > img {
     width: 50%;
     height: auto;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.request > form > .login-box {
-    background-color: rgba(255, 255, 255);
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    width: 25vw;
-    height: fit-content;
+.enter-zone-request > .request-box {
+    width: 80%;
     position: relative;
 }
 
-.request > form > .login-box > h1 {
+.enter-zone-request > .request-box > h1 {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     color: #EC1C24;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.request > form > .login-box > .input-box {
+.enter-zone-request > .request-box > p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #EC1C24;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.enter-zone-request > .request-box > .input-box {
     position: relative;
     width: 100%;
 }
 
-.label {
+.label-request {
     position: absolute;
     font-size: 14px;
     color: #b6b6b6;
-    left: 10px;
+    left: 0;
     top: 10px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 200;
 }
 
-.input-feild {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: calc(100%);
+.input-feild-request {
+    padding: 10px 10px 10px 0px;
+    margin-bottom: 40px;
+    border: #263767 0px solid;
+    border-bottom: #263767 2px solid;
+    width: 100%;
+    font-family: "Lexend", sans-serif;
+    font-weight: 200;
 }
 
-.input-feild:focus {
-    border: #EC1C24 1px solid;
+.input-feild-request:focus {
+    border: #263767 0px solid;
+    border-bottom: #263767 2px solid;
     outline: none;
 }
 
-
-.input-feild:focus ~ .label,
-.input-feild:valid ~ .label {
+.input-feild-request:focus ~ .label-request {
     position: absolute;
-    top: -10px;
-    left: 8px;
+    top: 10px;
+    right: 0;
     font-size: 14px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
     color: #EC1C24;
-    font-weight: bold;
     background-color: white;
-    padding: 0 5px;
+    padding: 0 0px;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.request > form > .login-box > button {
+.input-feild-request:valid ~ .label-request {
+    display: none;
+}
+
+.request-box > button {
     background-color: #EC1C24;
     width: 100%;
-    height: 30px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 100px;
     color: white;
     cursor: pointer;
-    font-weight: bold;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 10px;
+    transform-origin: center; /* tâm thu nhỏ */
+    transition: transform 0.1s ease;
 }
 
-.request > form > .login-box > button:hover {
-    background-color: #ea4e53;
+.request-box > button:hover {
+    outline: 2px solid #ffffff; 
+    box-shadow: 0 0 0 4px #EC1C24; 
 }
 
-.request > form > .login-box > button:active {
-    background-color: #ffffff;
+.request-box > button:active {
+    background-color: #ec1c23c6;
+    transform: scale(0.98);
 }
 
-.request > form > p {
+.enter-zone-request > p {
     margin-top: 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #000000;
+    color: #263767;
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
 }
 
-.request > form > a {
+.enter-zone-request > a {
     color: #EC1C24;
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
-    margin-bottom: 30px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
 }
 
-.request > form > a:hover {
+.enter-zone-request > a:hover {
     text-decoration: underline;
 }
 
-.request > form > .login-box > p {
-    color: #EC1C24;
-    font-size: 12px;
-    margin-bottom: 20px;
-    font-weight: bolder;
-    text-align: center;
+.image-zone-request {
+    overflow: hidden;
+    background-color: #263767;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.image-zone-request > img {
+    height: 100%;
 }

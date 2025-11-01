@@ -6,6 +6,7 @@ import emailjs from 'emailjs-com';
 import "../styles/components-styles/Request.css";
 
 import LogoMA from "../assets/logoMonAmour.png";
+import backgroundLogin from "../assets/img_Login.jpg"
 
 export default function Request() {
 
@@ -43,23 +44,28 @@ export default function Request() {
     return (
         <>
             <div className="request">
-                <form id="contact-form" onSubmit={handleSubmit}>
-                    <img src={LogoMA} alt="logoMonAmour"/>
-                    <div className="login-box">
-                        <h1>Registration Form</h1>
-                        <div className="input-box">
-                            <input type="text" className="input-feild" id="username" name="username" onChange={(e) => setUsername(e.target.value)} required/>
-                            <label className="label" >Username</label>
+                <form className="request-form" onSubmit={handleSubmit}>
+                    <div className="enter-zone-request">
+                        <img src={LogoMA} alt="logoMonAmour"/>
+                        <div className="request-box">
+                            <h1>Registration Form</h1>
+                            <div className="input-box">
+                                <input type="text" className="input-feild-request" id="username" name="username" onChange={(e) => setUsername(e.target.value)} required/>
+                                <label className="label-request" >Username</label>
+                            </div>
+                            <div className="input-box">
+                                <input type="password" className="input-feild-request" id="password" name="password" onChange={(e) => setPassword(e.target.value)} required/>    
+                                <label className="label-request">Password</label>
+                            </div>
+                            <p>Your password needs <br/> 8+ characters and at least 1 number</p>
+                            <button type="submit" id="send-button">Send</button>
                         </div>
-                        <div className="input-box">
-                            <input type="password" className="input-feild" id="password" name="password" onChange={(e) => setPassword(e.target.value)} required/>    
-                            <label className="label">Password</label>
-                        </div>
-                        <p>Your password needs 8+ characters and at least 1 number</p>
-                        <button type="submit" id="send-button">Send</button>
+                        <p>Already have an account ?</p><br/>
+                        <Link to="/">Login here</Link>
                     </div>
-                    <p>Already have an account ?</p><br/>
-                    <Link to="/">Login here</Link>
+                    <div className="image-zone-request">
+                        <img src={backgroundLogin} alt="logoMonAmour" draggable="false" />
+                    </div>
                 </form>
             </div>
         </>
